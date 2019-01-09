@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio y Televisión</title>
+    <link rel="stylesheet" href="iconos/css/fontello.css">
+    <link rel="stylesheet" href="iconos">
+    <link rel="stylesheet" href="css/est-menu.css">
+    <link rel="stylesheet" href="css/est-index.css">
+    <link rel="stylesheet" href="css/est-modal.css">
+</head>
+<body>
+    <header>
+      <img src="imagenes/logoEH.jpg" class="img-logoeh">
+        <input type="checkbox" id="check">
+        <label for="check" class="icon-menu"></label>
+    
+        <nav class="menu">
+            <ul>
+                <li><a href="#" style="background: black; color:white;">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="titulo">
+            <h1>Sistema de Inventario</h1>
+        </div>
+        
+        <div class="logo">
+            <img src="imagenes/lg.png" alt="">
+        </div>
+        
+        <div class="inicio">
+            <h1>Inicia Sesión:</h1>
+        </div>
+        
+        <div class="area">
+           
+           <a href="#openmodal" class="open"><h2>Servicios Generales</h2></a>
+           <a href="#openmodal" class="open"><h3>Informática</h3></a>
+           <a href="#openmodal" class="open"><h3>Contraloria</h3></a>
+
+            <section id="openmodal" class="modalDialog">
+            <section class="modal">
+                <a href="#close" class="close"> X </a>
+                
+                <h2>Ingresa tus datos</h2>
+                <form action="php/login.php" method="post" enctype="application/x-www-form-urlencoded">
+                <label for="caja1"><p style="font-size: 15px; font-family:cursive; text-align: center;">Nombre de Usuario</p>
+                <p style="margin-bottom: 12px; "><input type="text" id="caja1" name="usuario" placeholder="user" required style="width: 100%"  ></p>
+                </label>
+                <label for="caja2"><p style="font-size: 15px; font-family:cursive; text-align: center;">Contraseña</p>
+                <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%" ></p>
+                </label>
+                <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion" ></a>
+                </form>
+            </section>
+            </section>
+        </div>
+        
+        
+        
+        
+    </main>
+    
+</body>
+</html>
