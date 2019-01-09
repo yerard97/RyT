@@ -26,42 +26,20 @@
     
     <main>
         <div class="titulo">
-            <h1>Sistema de Inventario</h1>
+            <h1>Artículos</h1>
         </div>
-        
-        <div class="logo">
-            <img src="imagenes/lg.png" alt="">
-        </div>
-        
-        <div class="inicio">
-            <h1>Inicia Sesión:</h1>
-        </div>
-        
-        <div class="area">
-           
-           <a href="#openmodal" class="open"><h2>Servicios Generales</h2></a>
-           <a href="#openmodal" class="open"><h3>Informática</h3></a>
-           <a href="#openmodal" class="open"><h3>Contraloria</h3></a>
-
-            <section id="openmodal" class="modalDialog">
-            <section class="modal">
-                <a href="#close" class="close"> X </a>
-                
-                <h2>Ingresa tus datos</h2>
-                <form action="validar.php" method="post" enctype="application/x-www-form-urlencoded">
-                <label for="caja1"><p style="font-size: 15px; font-family:cursive; text-align: center;">Nombre de Usuario</p>
-                <p style="margin-bottom: 12px; "><input type="text" id="caja1" name="usuario" placeholder="Usuario" required style="width: 100%"></p>
-                </label>
-                <label for="caja2"><p style="font-size: 15px; font-family:cursive; text-align: center;">Contraseña</p>
-                <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%"></p>
-                </label>
-                <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion"></a>
-                </form>
-            </section>
-            </section>
-        </div>
-        
-        
+         
+         <div class="buscar">
+                 <h4 >Buscar:</h4>
+                 <select name="lista" id="list" style="cursor: pointer;">
+                 <option value="inventario">No. Inventario</option>
+                 <option value="factura">Factura</option>
+                 <option value="serie">Serie</option>
+             </select>
+             <input type="text" placeholder="Escribe el número" id="caja1">
+         </div>
+         
+         <a href="cont-rep.html"><button style="width: 180px; height: 33px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive; margin-left: 10%; cursor: pointer;">Generar Reporte</button></a>
         
         
     </main>
