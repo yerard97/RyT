@@ -37,12 +37,28 @@
         
         <div class="area">
            
-           <a href="#openmodal" class="open"><h2>Servicios Generales</h2></a>
-           <a href="#openmodal" class="open"><h3>Informática</h3></a>
-           <a href="#openmodal" class="open"><h3>Contraloria</h3></a>
-            <a href="#openmodal" class="open"><h3>Administración</h3></a>
-            <a href="#openmodal" class="open"><h3>Almacén</h3></a>
-
+           <a href="#openmodal" class="open" id="1" onclick="metodSelection(this)"><h2>Servicios Generales</h2></a>
+           <a href="#openmodal" class="open" id="2" onclick="metodSelection(this)"><h3>Informática</h3></a>
+           <a href="#openmodal" class="open" id="3" onclick="metodSelection(this)"><h3>Contraloria</h3></a>
+            <a href="#openmodal" class="open" id="4" onclick="metodSelection(this)"><h3>Administración</h3></a>
+            <a href="#openmodal" class="open" id="5" onclick="metodSelection(this)"><h3>Almacén</h3></a>
+            <script type='text/javascript'>
+                function metodSelection(comp){
+                    let id= comp.id;
+                    var inputnombre=document.getElementById("aux");
+                    if(id==1){
+                        inputnombre.value="SG";
+                    }else if(id==2){
+                            inputnombre.value="INF";
+                    }else if(id==3){
+                            inputnombre.value="CONT";
+                    }else if(id==4){
+                            inputnombre.value="ADM";
+                    }else if(id==5){
+                            inputnombre.value="ALM";
+                    }
+                }
+            </script>
             <section id="openmodal" class="modalDialog">
             <section class="modal">
                 <a href="#close" class="close"> X </a>
@@ -56,9 +72,12 @@
                 <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%" ></p>
                 </label>
                 <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion" ></a>
+                <input type="hidden" name="lugar" id = "aux" value="Sg"/>
                 </form>
             </section>
             </section>
+            
+
         </div>
         
         
