@@ -2,24 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Radio y Televisión</title>
+    <title>Almacén</title>
     <link rel="stylesheet" href="iconos/css/fontello.css">
     <link rel="stylesheet" href="iconos">
     <link rel="stylesheet" href="css/est-menu.css">
-    <link rel="stylesheet" href="css/est-index.css">
+    <link rel="stylesheet" href="css/est-alm.css">
     <link rel="stylesheet" href="css/est-modal.css">
 </head>
 <body>
     <header>
-      <img src="imagenes/logoEH.jpg" class="img-logoeh">
+      <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
         <input type="checkbox" id="check">
         <label for="check" class="icon-menu"></label>
     
         <nav class="menu">
             <ul>
-                <li><a href="#" style="background: black; color:white;">Inicio</a></li>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.html" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
+        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Almacén</h2>
     </header>
     
     <main>
@@ -40,22 +42,20 @@
            <a href="#openmodal" class="open"><h2>Servicios Generales</h2></a>
            <a href="#openmodal" class="open"><h3>Informática</h3></a>
            <a href="#openmodal" class="open"><h3>Contraloria</h3></a>
-            <a href="#openmodal" class="open"><h3>Administración</h3></a>
-            <a href="#openmodal" class="open"><h3>Almacén</h3></a>
 
             <section id="openmodal" class="modalDialog">
             <section class="modal">
                 <a href="#close" class="close"> X </a>
                 
                 <h2>Ingresa tus datos</h2>
-                <form action="php/login.php" method="post" enctype="application/x-www-form-urlencoded">
+                <form action="validar.php" method="post" enctype="application/x-www-form-urlencoded">
                 <label for="caja1"><p style="font-size: 15px; font-family:cursive; text-align: center;">Nombre de Usuario</p>
-                <p style="margin-bottom: 12px; "><input type="text" id="caja1" name="usuario" placeholder="User" required style="width: 100%"  ></p>
+                <p style="margin-bottom: 12px; "><input type="text" id="caja1" name="usuario" placeholder="Usuario" required style="width: 100%"></p>
                 </label>
                 <label for="caja2"><p style="font-size: 15px; font-family:cursive; text-align: center;">Contraseña</p>
-                <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%" ></p>
+                <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%"></p>
                 </label>
-                <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion" ></a>
+                <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion"></a>
                 </form>
             </section>
             </section>
