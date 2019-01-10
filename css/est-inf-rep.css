@@ -2,6 +2,16 @@ main{
     position: relative;
     top: 60px;
 }
+
+.menu li a:hover{
+    color: white;
+}
+.menu li a.login2{
+    color:darkred;
+}
+.menu li a.login2:hover{
+    color:#e30707;
+}
 .titulo{
       position:fixed;
     width: 100%;
@@ -15,95 +25,43 @@ main{
     font-size: 55px;
 }
 
-.menu li a:hover{
-    color: white;
-}
-.menu li a.login2{
-    color:darkred;
-}
-.menu li a.login2:hover{
-    color:#e30707;
-}
-
-.buscar{
-    width: 50%;
-    padding: 150px;
-    margin-left: 5%;
+.text{
+    width: 100%;
+    text-align: center;
     display: flex;
-    justify-content: space-around;
-    position: fixed;
+    justify-content: center;
+    padding-top: 250px;
+    font-size: 25px;
+    justify-content: space-around; 
 }
 
-.repo{
-    position:relative;
-    margin-left: 170.5px;
+.botones{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 25px;
+    justify-content: space-around; 
 }
 
-#boton{
-   background-color: darkgreen;
-    height: 30px;
+.botones input{
+    background-color: darkgreen;
+    height: 50px;
+    width: 150px;
     letter-spacing: 1px;
-    float: left;
-    border-radius: 5px;
+    border-radius: 25px;
     font-family: cursive;
     box-shadow: 3px 3px green;
     color: white;
-    font-size: 14px;
+    font-size: 19px;
     font-weight:bold;
     cursor: pointer;
-    margin-top: -32px;
-    margin-left: 60px;
-}
-
-.conten{   
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%; corrige ancho por el espacio en los campos
-    margin-top: 180px;
-}
-
-#tabla, #oculto{
-     margin:50px auto;
-    width: 100%;
-    margin-right: 10p
-}
-
-#tabla{
- margin-left: -130px;
 }
 
 
-#oculto{
-    margin-left: 0%;
-    position:static;
-    
-}
-
-table{
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    border-collapse: collapse;
-}
-
-th,td{
-    padding: 10px;
-}
-
-
-tr:nth-child(even){
-    background-color:azure; 
-}
-
-tr:nth-child(odd){
-    background-color:#8FAF95; 
-}
-
-
-@media screen and (max-width:1083px){
-    .conten{
-        width: 186%;
-    }
+.text h3{
+    width: 180px;
 }
 
 @media screen and (max-width:600px){
@@ -115,12 +73,6 @@ tr:nth-child(odd){
     header h2{
     padding: 7px;
     font-size: 20px;
-    }
-        .conten{
-        width: 400%;
-    }
-    .buscar{
-        margin-left: 10%;
     }
 
 }

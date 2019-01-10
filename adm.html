@@ -26,44 +26,44 @@
     
     <main>
         <div class="titulo">
-            <h1>Sistema de Inventario</h1>
+            <h1>Solicitud de Compra</h1>
         </div>
-        
-        <div class="logo">
-            <img src="imagenes/lg.png" alt="">
-        </div>
-        
-        <div class="inicio">
-            <h1>Inicia Sesión:</h1>
-        </div>
-        
-        <div class="area">
-           
-           <a href="#openmodal" class="open"><h2>Servicios Generales</h2></a>
-           <a href="#openmodal" class="open"><h3>Informática</h3></a>
-           <a href="#openmodal" class="open"><h3>Contraloria</h3></a>
-
-            <section id="openmodal" class="modalDialog">
-            <section class="modal">
-                <a href="#close" class="close"> X </a>
+        <form action="php/login.php" method="post" enctype="application/x-www-form-urlencoded">
+          
+      <div class="text">
+          <div class="t1">
+           <h3 style="text-align: center;">Área que solicita:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Producto:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Descripción:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Producto:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Descripción:</h3>
+            </div>     
+             <div class="t2">                <input type="text" name="aread" placeholder="Escribe algo..." style="height: 20px;" >
+               
+               
+                <input type="text" name="aread" placeholder="Escribe algo..." >
                 
-                <h2>Ingresa tus datos</h2>
-                <form action="validar.php" method="post" enctype="application/x-www-form-urlencoded">
-                <label for="caja1"><p style="font-size: 15px; font-family:cursive; text-align: center;">Nombre de Usuario</p>
-                <p style="margin-bottom: 12px; "><input type="text" id="caja1" name="usuario" placeholder="Usuario" required style="width: 100%"></p>
-                </label>
-                <label for="caja2"><p style="font-size: 15px; font-family:cursive; text-align: center;">Contraseña</p>
-                <p style="margin-bottom: 25px;"><input type="password" id="caja2" name="password" placeholder="Contraseña" required style="width: 100%"></p>
-                </label>
-                <a href="#"><input type="submit" style="border-radius: 10px; width: 100px; height: 30px; font-family: cursive; font-size: 13px; font-weight:bolder; margin-left: 35%; cursor: pointer; " value="Iniciar sesion"></a>
-                </form>
-            </section>
-            </section>
-        </div>
-        
-        
-        
-        
+                                              
+                <input type="text" name="aread" placeholder="Escribe algo..." >
+
+                
+                 <input type="text" name="aread" placeholder="Escribe algo..." >
+
+
+                 <input type="text" name="aread" placeholder="Escribe algo..." >
+                
+            </div>
+                 
+             
+         </div> 
+          
+           <a href="Pag/resguardoMovEqui.php"><input type="submit" value="Generar" id="boton"></a>
+           
+         </form>    
     </main>
     
 </body>
