@@ -2,33 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contraloria</title>
+    <title>Contraloria3</title>
     <link rel="stylesheet" href="iconos/css/fontello.css">
     <link rel="stylesheet" href="iconos">
     <link rel="stylesheet" href="css/est-menu.css">
-    <link rel="stylesheet" href="css/x.css">
+    <link rel="stylesheet" href="css/est-cont.css">
     <link rel="stylesheet" href="css/est-modal.css">
 </head>
-<script type="text/javascript">
-    function Mostrar(){
-     document.getElementById("oculto").style.display ="block";
-        }
-        function Ocultar(){
-     document.getElementById("oculto").style.display ="none";
-        }
-        function Mostrar_Ocultar(){
-            var oculto=document.getElementById("oculto");
-            if(oculto.style.display=="none"){
-               Mostrar();
-                document.getElementById("boton").value="Ocultar";
-               }
-            else{
-                Ocultar();
-                 document.getElementById("boton").value="Mostrar";
-            }
-        }
-    
-</script>
+
 <body>
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
@@ -41,7 +22,7 @@
               <li><a href="index.html" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
-        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Contraloria</h2>
+        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Contraloria3</h2>
     </header>
     
     <main>
@@ -62,10 +43,11 @@
          <a href="cont-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          
          </div>
+         <div class=conten id="con">
+         <label for="check1">Detalles</label>
+         <input type="checkbox" id="check1">
         
         
-        <div class=conten id="con">
-         <input type="submit" id="boton" value="Mostrar" onclick="Mostrar_Ocultar()"/>
          <div id="tabla">
              <table>
                   <thead>
@@ -130,19 +112,19 @@
                  </tr>
              </table>    
              </div>
-                <div id="oculto" style="display: none">
+                <div id="oculto1">
                 <table>
                  <thead>
                      <tr style="background: #118327;" id="tab2">
                          
-                     <th id="oculto1">COLOR MATERIAL</th>
-                      <th id="oculto1" class="t2">MARCA</th>
-                        <th id="oculto1" class="t2">MODELO</th>
-                         <th id="oculto1" class="t2">TIPO</th>
-                         <th id="oculto1" class="t2">STATUS</th>
-                         <th id="oculto1" class="t2">FACTURA</th>
-                         <th id="oculto1" class="t2">ORIGEN</th>
-                         <th id="oculto1" class="t2">IVA</th>
+                     <th id="oculto">COLOR MATERIAL</th>
+                      <th id="oculto" class="t2">MARCA</th>
+                        <th id="oculto" class="t2">MODELO</th>
+                         <th id="oculto" class="t2">TIPO</th>
+                         <th id="oculto" class="t2">STATUS</th>
+                         <th id="oculto" class="t2">FACTURA</th>
+                         <th id="oculto" class="t2">ORIGEN</th>
+                         <th id="oculto" class="t2">IVA</th>
                          </tr>
                          </thead>
                          <tr>
@@ -182,7 +164,7 @@
                  </tr>
              </table>
              
-         </div>             
+         </div>        
          </div>
     </main>
 </body>

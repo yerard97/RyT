@@ -18,13 +18,13 @@
         }
         function Mostrar_Ocultar(){
             var oculto=document.getElementById("oculto");
-            if(oculto.style.display=="none"){
-               Mostrar();
-                document.getElementById("boton").value="Ocultar";
+            if(oculto.style.display=="block"){
+               Ocultar();
+                document.getElementById("boton").value="Mostrar";
                }
             else{
-                Ocultar();
-                 document.getElementById("boton").value="Mostrar";
+                Mostrar();
+                 document.getElementById("boton").value="Ocultar";
             }
         }
     
@@ -61,33 +61,25 @@
          
          <a href="cont-rep.html"><button style="width: 180px; height: 33px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive; margin-left: 10%; cursor: pointer; border-color: cadetblue">Generar Reporte</button></a>
          
-         <input type="submit" id="boton" value="Ocultar" onclick="Mostrar_Ocultar()"/>
+         <input type="submit" id="boton" value="Mostrar" onclick="Mostrar_Ocultar()"/>
         
         
          <div id="tabla">
              <table>
-                
-                    <thead>
+                  <thead>
                     <tr style="background: #118327;">
                          <th>No. INV.</th>
                          <th>DESCRIPCIÓN</th>
                          <th>AREA ASIGNADA</th>
-                         <th>FORMA DE COMPRA</th>
+                         <th>FORMA COMPRA</th>
                          <th>FACTURA</th>
                          <th>RESPONSABLE</th>
                          <th>COSTO c/IVA</th>
                          <th>COSTO s/IVA</th>
-                         <th>FECHA DE COMPRA</th>
+                         <th>FECHA COMPRA</th>
                          <th>SERIE</th>
                          <th>OBSERVACIONES</th>
-                         <th id="oculto">COLOR MATERIAL</th>
-                       <!-- <th id="oculto" class="t2">MARCA</th>
-                         <th id="oculto" class="t2">MODELO</th>
-                         <th id="oculto" class="t2">TIPO</th>
-                         <th id="oculto" class="t2">STATUS</th>
-                         <th id="oculto" class="t2">FACTURA</th>
-                         <th id="oculto" class="t2">ORIGEN</th>
-                         <th id="oculto" class="t2">IVA</th>-->
+                         
                      </tr>
                  </thead> 
                  <tr>
@@ -102,14 +94,7 @@
                      <td>Nueve</td>
                      <td>Diez</td>
                      <td>Once</td>
-                    <!-- <td  id="oculto" class="t2">Uno</td>
-                     <td  id="oculto" class="t2">Dos</td>
-                     <td  id="oculto" class="t2">Tres</td>
-                     <td  id="oculto" class="t2">Cuatro</td>
-                     <td  id="oculto" class="t2">Cinco</td>
-                     <td  id="oculto" class="t2">Seis</td>
-                     <td  id="oculto" class="t2">Siete</td>
-                     <td  id="oculto" class="t2">Ocho</td>-->
+                    
                  </tr>
                  
                  <tr>
@@ -124,14 +109,7 @@
                      <td>Nueve</td>
                      <td>Diez</td>
                      <td>Once</td>
-                    <!-- <td id="oculto"  class="t2">Uno</td>
-                     <td id="oculto"  class="t2">Dos</td>
-                     <td id="oculto"  class="t2">Tres</td>
-                     <td id="oculto"  class="t2">Cuatro</td>
-                     <td id="oculto"  class="t2">Cinco</td>
-                     <td id="oculto"  class="t2">Seis</td>
-                     <td id="oculto"  class="t2">Siete</td>
-                     <td id="oculto"  class="t2">Ocho</td> -->
+                    
                  </tr>
                  
                  <tr>
@@ -146,16 +124,63 @@
                      <td>Nueve</td>
                      <td>Diez</td>
                      <td>Once</td>
-                  <!--   <td id="oculto"  class="t2">Uno</td>
-                     <td id="oculto"  class="t2">Dos</td>
-                     <td id="oculto"  class="t2">Tres</td>
-                     <td id="oculto"  class="t2">Cuatro</td>
-                     <td id="oculto"  class="t2">Cinco</td>
-                     <td id="oculto"  class="t2">Seis</td>
-                     <td id="oculto"  class="t2">Siete</td>
-                     <td id="oculto"  class="t2">Ocho</td>-->
+                 
                  </tr>
              </table>    
+             </div>
+                <div id="oculto" style="display: none;">
+                <table>
+                 <thead>
+                     <tr style="background: #118327;" id="tab2">
+                         
+                     <th id="oculto1">COLOR MATERIAL</th>
+                      <th id="oculto1" class="t2">MARCA</th>
+                        <th id="oculto1" class="t2">MODELO</th>
+                         <th id="oculto1" class="t2">TIPO</th>
+                         <th id="oculto1" class="t2">STATUS</th>
+                         <th id="oculto1" class="t2">FACTURA</th>
+                         <th id="oculto1" class="t2">ORIGEN</th>
+                         <th id="oculto1" class="t2">IVA</th>
+                         </tr>
+                         </thead>
+                         <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatigivieivevcgeingeefhpeifiqeugfcneipmugcuegicunmro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     
+                 </tr>
+                 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     
+                 </tr>
+                 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     
+                 </tr>
+             </table>
+             
+         </div>        
          </div>        
          
     </main>

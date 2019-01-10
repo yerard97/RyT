@@ -52,10 +52,10 @@ main{
     display: none;
 }
 
-.conten{
+.conten{   
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 100%; corrige ancho por el espacio en los campos
     margin-top: 180px;
 }
 
