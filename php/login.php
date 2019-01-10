@@ -1,5 +1,6 @@
 <?php
 include_once "dbconfig.php";
+
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
@@ -23,7 +24,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
 	if (password_verify($pass, $hash)) {
        // echo $row['dNombre'];
         //echo $l;
-         echo strcasecmp($l,$row['dNombre']);
+         //echo strcasecmp($l,$row['dNombre']);
         if(strcasecmp($l,$row['dNombre'])==0){
             
             
@@ -31,13 +32,27 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         
         $_SESSION['user'] = $user;					
 		//print_r($lugar);
-	echo "<script type='text/javascript'>
-        alert('Bienvenido');
+     echo "       <!doctype html>
+            <html>
+            <head>
+                <title>Sweet Alert Plugin</title>
+                <script src='../lib/sweetalert.min.js'></script>
+                <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
+                
+
+            </head>
+                </html>";
+   // echo "<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>";
+	echo " 
+    <script type='text/javascript'>
+    
+        swal('Bienvenido');
+        
         var val=' $lugar';
         if(val.trim()==='SG'){
             location.href ='../sg.html';
         }else if(val.trim()==='INF'){
-            location.href ='../inf.html';
+            //location.href ='../inf.html';
         }else if(val.trim()==='CONT'){
             location.href ='../cont.html';
         }else if(val.trim()==='ADM'){
