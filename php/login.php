@@ -6,15 +6,32 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
 $user = $_POST['usuario']; 
 $pass = $_POST['password'];
 $lugar =$_POST['lugar'];
-$result = mysqli_query($mysqli, "select Password from usuariosistema where user='$user';");
+if($lugar=='SG'){
+    $l='Servicios Generales';
+}else if($lugar=='INF'){
+    $l='Informatica';
+}else if($lugar=='CONT'){
+    $l='Contraloria';
+}else if($lugar=='ADM'){
+    $l='Administracion';
+}else if($lugar=='ALM'){
+    $l='Almacen';
+}
+$result = mysqli_query($mysqli, "SELECT password,dNombre FROM usuariosistema us,usuario u ,departamentos d where us.idUsuariosSistema=u.idUsuario && d.idDepartamentos = u.idDepartamentos &&  user='$user';");
 $row = mysqli_fetch_assoc($result);
-$hash = password_hash($row['Password'],PASSWORD_DEFAULT);
-	if (password_verify($pass, $hash)) {	
+$hash = password_hash($row['password'],PASSWORD_DEFAULT);
+	if (password_verify($pass, $hash)) {
+       // echo $row['dNombre'];
+        //echo $l;
+         echo strcasecmp($l,$row['dNombre']);
+        if(strcasecmp($l,$row['dNombre'])==0){
+            
+            
 		session_start();
         
         $_SESSION['user'] = $user;					
-		print_r($lugar);
-		echo "<script type='text/javascript'>
+		//print_r($lugar);
+	echo "<script type='text/javascript'>
         alert('Bienvenido');
         var val=' $lugar';
         if(val.trim()==='SG'){
@@ -29,7 +46,13 @@ $hash = password_hash($row['Password'],PASSWORD_DEFAULT);
             location.href ='../alm.html';
         }
         </script>";
-	
+	   } else{
+            	echo "<script type='text/javascript'>
+        alert('Error area no asignada');
+        var val=' $lugar';
+            location.href ='../index.html';
+        </script>";
+        }
 	} else {
 		echo "<script type='text/javascript'>
         alert('Usuario o Contraseña Incorrectos');
