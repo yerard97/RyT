@@ -3,12 +3,8 @@ main{
     top: 60px;
 }
 
-.titulo{
-    position:fixed;
-    width: 100%;
-}
 .titulo h1{
-    padding: 50px;
+    padding: 25px;
     color:#118327;
     font-style:oblique;
     font-family: cursive;
@@ -27,71 +23,13 @@ main{
 }
 
 .buscar{
+    padding: 25px;
     width: 40%;
-    padding: 150px;
     margin-left: 5%;
     display: flex;
     justify-content: space-around;
-    position: fixed;
-}
-.repo{
-    width: 100%;
-    position:relative;
-    margin-left: 170px;
 }
 
-#oculto1{
-   display:none; 
-}
-
-#check1:checked~#oculto1{
-    display: block;
-}
-
-#check1{
-    display: none;
-}
-
-.conten{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    margin-top: 180px;
-}
-
-.conten label{
-    background-color: darkgreen;
-    height: 20px;
-    letter-spacing: 1px;
-    float: left;
-    border-radius: 5px;
-    font-family: cursive;
-    box-shadow: 3px 3px green;
-    color: white;
-    font-size: 15px;
-    font-weight:bold;
-    cursor: pointer;
-    margin-top: -25px;
-    margin-left: 60px;
-    
-}
-
-#tabla, #oculto1{
-    margin:50px auto;
-    width: 100%;
-    margin-right: 10px;
-    
-}
-
-#tabla{
- margin-left: -130px;
-}
-
-#oculto1{
-    margin-left: -1%;
-    position:static;
-    
-}
 table{
     width: 100%;
     background-color: white;
@@ -101,7 +39,6 @@ table{
 
 th,td{
     padding: 10px;
-    
 }
 
 
@@ -113,11 +50,6 @@ tr:nth-child(odd){
     background-color:#8FAF95; 
 }
 
-@media screen and (max-width:1083px){
-    .conten{
-        width: 186%;
-    }
-}
 
 
 @media screen and (max-width:600px){
@@ -129,9 +61,6 @@ tr:nth-child(odd){
     header h2{
     padding: 7px;
     font-size: 20px;
-    }
-    .conten{
-        width: 300%;
     }
 }
 

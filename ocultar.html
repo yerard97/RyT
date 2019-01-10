@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contraloria2</title>
+    <link rel="stylesheet" href="iconos/css/fontello.css">
+    <link rel="stylesheet" href="iconos">
+    <link rel="stylesheet" href="css/est-menu.css">
+    <link rel="stylesheet" href="css/x.css">
+    <link rel="stylesheet" href="css/est-modal.css">
+</head>
+<script type="text/javascript">
+    function Mostrar(){
+     document.getElementById("oculto").style.display ="block";
+        }
+        function Ocultar(){
+     document.getElementById("oculto").style.display ="none";
+        }
+        function Mostrar_Ocultar(){
+            var oculto=document.getElementById("oculto");
+            if(oculto.style.display=="none"){
+               Mostrar();
+                document.getElementById("boton").value="Ocultar";
+               }
+            else{
+                Ocultar();
+                 document.getElementById("boton").value="Mostrar";
+            }
+        }
+    
+</script>
+<body>
+    <header>
+      <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
+        <input type="checkbox" id="check">
+        <label for="check" class="icon-menu"></label>
+    
+        <nav class="menu">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.html" class="login2">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Contraloria2</h2>
+    </header>
+    
+    <main>
+        <div class="titulo">
+            <h1>Artículos</h1>
+        </div>
+         
+         <div class="buscar">
+                 <h4 >Buscar:</h4>
+                 <select name="lista" id="list" style="cursor: pointer;">
+                 <option value="inventario">No. Inventario</option>
+                 <option value="factura">Factura</option>
+                 <option value="serie">Serie</option>
+             </select>
+             <input type="text" placeholder="Escribe el número" id="caja1">
+         </div>
+         
+         <a href="cont-rep.html"><button style="width: 180px; height: 33px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive; margin-left: 10%; cursor: pointer; border-color: cadetblue">Generar Reporte</button></a>
+         
+         <input type="submit" id="boton" value="Ocultar" onclick="Mostrar_Ocultar()"/>
+        
+        
+         <div id="tabla">
+             <table>
+                
+                    <thead>
+                    <tr style="background: #118327;">
+                         <th>No. INV.</th>
+                         <th>DESCRIPCIÓN</th>
+                         <th>AREA ASIGNADA</th>
+                         <th>FORMA DE COMPRA</th>
+                         <th>FACTURA</th>
+                         <th>RESPONSABLE</th>
+                         <th>COSTO c/IVA</th>
+                         <th>COSTO s/IVA</th>
+                         <th>FECHA DE COMPRA</th>
+                         <th>SERIE</th>
+                         <th>OBSERVACIONES</th>
+                         <th id="oculto">COLOR MATERIAL</th>
+                       <!-- <th id="oculto" class="t2">MARCA</th>
+                         <th id="oculto" class="t2">MODELO</th>
+                         <th id="oculto" class="t2">TIPO</th>
+                         <th id="oculto" class="t2">STATUS</th>
+                         <th id="oculto" class="t2">FACTURA</th>
+                         <th id="oculto" class="t2">ORIGEN</th>
+                         <th id="oculto" class="t2">IVA</th>-->
+                     </tr>
+                 </thead> 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     <td>Nueve</td>
+                     <td>Diez</td>
+                     <td>Once</td>
+                    <!-- <td  id="oculto" class="t2">Uno</td>
+                     <td  id="oculto" class="t2">Dos</td>
+                     <td  id="oculto" class="t2">Tres</td>
+                     <td  id="oculto" class="t2">Cuatro</td>
+                     <td  id="oculto" class="t2">Cinco</td>
+                     <td  id="oculto" class="t2">Seis</td>
+                     <td  id="oculto" class="t2">Siete</td>
+                     <td  id="oculto" class="t2">Ocho</td>-->
+                 </tr>
+                 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     <td>Nueve</td>
+                     <td>Diez</td>
+                     <td>Once</td>
+                    <!-- <td id="oculto"  class="t2">Uno</td>
+                     <td id="oculto"  class="t2">Dos</td>
+                     <td id="oculto"  class="t2">Tres</td>
+                     <td id="oculto"  class="t2">Cuatro</td>
+                     <td id="oculto"  class="t2">Cinco</td>
+                     <td id="oculto"  class="t2">Seis</td>
+                     <td id="oculto"  class="t2">Siete</td>
+                     <td id="oculto"  class="t2">Ocho</td> -->
+                 </tr>
+                 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
+                     <td>Ocho</td>
+                     <td>Nueve</td>
+                     <td>Diez</td>
+                     <td>Once</td>
+                  <!--   <td id="oculto"  class="t2">Uno</td>
+                     <td id="oculto"  class="t2">Dos</td>
+                     <td id="oculto"  class="t2">Tres</td>
+                     <td id="oculto"  class="t2">Cuatro</td>
+                     <td id="oculto"  class="t2">Cinco</td>
+                     <td id="oculto"  class="t2">Seis</td>
+                     <td id="oculto"  class="t2">Siete</td>
+                     <td id="oculto"  class="t2">Ocho</td>-->
+                 </tr>
+             </table>    
+         </div>        
+         
+    </main>
+</body>
+</html>
