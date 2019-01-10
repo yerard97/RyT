@@ -12,6 +12,7 @@
 <script type="text/javascript">
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
+        
         }
         function Ocultar(){
      document.getElementById("oculto").style.display ="none";
@@ -27,6 +28,33 @@
                  document.getElementById("boton").value="Mostrar";
             }
         }
+    
+    function Mostrar2(){
+     document.getElementById("cont1").style.display ="block";
+        document.getElementById("tabla").style.marginTop="130px";
+        document.getElementById("oculto").style.marginTop="130px";
+        document.getElementById("ed").style.visibility="inherit";
+        document.getElementById("ed1").style.visibility="inherit";
+        }
+        function Ocultar2(){
+     document.getElementById("cont1").style.display ="none";
+            document.getElementById("tabla").style.marginTop="50px";
+            document.getElementById("oculto").style.marginTop="50px";
+             document.getElementById("ed").style.visibility="hidden";
+           document.getElementById("ed1").style.visibility="hidden";
+           
+        }
+        function Edit(){
+            var cont1=document.getElementById("cont1");
+            if(cont1.style.display=="none"){
+               Mostrar2();
+               }
+            else{
+                Ocultar2();
+            }
+        }
+    
+    
     
 </script>
 <body>
@@ -56,16 +84,39 @@
                  <option value="factura">Factura</option>
                  <option value="serie">Serie</option>
              </select>
-             <input type="text" placeholder="Escribe el número" id="caja1">
+             <input type="text" placeholder="Escribe el número" id="caja2">
          </div>
-         <div class=repo>
-         <a href="cont-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          
+         <div class=repo>
+         <a href="inf-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          </div>
         
         
         <div class=conten id="con">
          <input type="submit" id="boton" value="Mostrar" onclick="Mostrar_Ocultar()"/>
+         <input type="submit" id="boton1" value="Editar" onclick="Edit()"/>
+             
+             <div id="ed" style="visibility: hidden;">
+                    <h4 >No. Inventario:  </h4>
+                    <input type="text" placeholder="Escribe algo..." id="caja1">
+                    <h4 >No. Serie:  </h4>
+                    <input type="text" placeholder="Escribe algo..." id="caja1">
+                    <h4 >Status:  </h4>
+                     <input type="text" placeholder="Escribe algo..." id="caja1">
+             </div>
+             
+              <div id="ed1" style="visibility: hidden;">
+                    <h4 >Responsable:  </h4>
+                    <input type="text" placeholder="Escribe el número" id="caja3">
+                    <h4 >Observaciones:  </h4>
+                    <input type="text" placeholder="Escribe el número" id="caja3">
+                    
+             </div>
+             
+             <div id="cont1" style="display:none;">
+                 <input type="submit" id="boton2" value="Guardar"/> 
+                 <input type="submit" id="boton3" value="Cancelar"/>
+             </div>
          <div id="tabla">
              <table>
                   <thead>
@@ -130,7 +181,7 @@
                  </tr>
              </table>    
              </div>
-                <div id="oculto" style="display: none">
+                <div id="oculto" style="display:none">
                 <table>
                  <thead>
                      <tr style="background: #118327;" id="tab2">
