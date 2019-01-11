@@ -35,10 +35,13 @@ main{
 }
 
 .repo{
-    position:relative;
     margin-left: 170.5px;
+    
 }
 
+#rep{
+    position: fixed;
+}
 #boton{
    background-color: darkgreen;
     height: 30px;
@@ -53,29 +56,30 @@ main{
     cursor: pointer;
     margin-top: -32px;
     margin-left: 60px;
+    position: fixed;
 }
+#caja1{
+    height: 20px;
+    width: 153px;
+    justify-content: space-between;
+}
+
 
 .conten{   
     display: flex;
     flex-wrap: nowrap;
     width: 100%; corrige ancho por el espacio en los campos
     margin-top: 180px;
+    padding-top: 230px;
 }
 
 #tabla, #oculto{
-     margin:50px auto;
+    margin:50px auto;
     width: 100%;
-    margin-right: 10p
 }
-
-#tabla{
- margin-left: -130px;
-}
-
 
 #oculto{
     margin-left: 0%;
-    position:static;
     
 }
 
