@@ -18,7 +18,7 @@ if($lugar=='SG'){
 }else if($lugar=='ALM'){
     $l='Almacen';
 }
-$result = mysqli_query($mysqli, "SELECT password,dNombre FROM usuariosistema us,usuario u ,departamentos d where us.idUsuariosSistema=u.idUsuario && d.idDepartamentos = u.idDepartamentos &&  user='$user';");
+$result = mysqli_query($mysqli, "SELECT password,dNombre FROM usuariosistema us,usuario u ,departamentos d where us.idUsuariosSistema=u.idUsuario && d.idDepartamentos = u.uidDepartamentos &&  user='$user';");
 $row = mysqli_fetch_assoc($result);
 $hash = password_hash($row['password'],PASSWORD_DEFAULT);
 	if (password_verify($pass, $hash)) {
