@@ -50,15 +50,15 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         
         var val=' $lugar';
         if(val.trim()==='SG'){
-            location.href ='../sg.html';
+             setTimeout(function(){  location.href ='../sg.html';}, 1000);
         }else if(val.trim()==='INF'){
-            //location.href ='../inf.html';
+                 setTimeout(function(){  location.href ='../inf.html';}, 1000);
         }else if(val.trim()==='CONT'){
-            location.href ='../cont.html';
+                 setTimeout(function(){  location.href ='../cont.html';}, 1000);
         }else if(val.trim()==='ADM'){
-            location.href ='../adm.html';
+                 setTimeout(function(){  location.href ='../adm.html';}, 1000);
         }else if(val.trim()==='ALM'){
-            location.href ='../alm.html';
+                setTimeout(function(){  location.href ='../alm.html';}, 1000); 
         }
         </script>";
 	   } else{
