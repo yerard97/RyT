@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once "php/dbconfig.php";
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -75,7 +75,8 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                  </thead> 
                  
                  <?php
-                   $sql="SELECT * from detallesc";
+                         $var = $_SESSION['idsolcomp'];
+                   $sql="SELECT * from detallesc where dscsolicitudCompra= $var";
                    $result=mysqli_query($mysqli,$sql);
                     
                    while($mostrar=mysqli_fetch_array($result)){
