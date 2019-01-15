@@ -57,6 +57,26 @@ main{
     margin-left: 10%;
 }
 
+.btn{
+    margin-top: 250px;
+    margin-left: -18%;
+}
+
+#boton1{
+  background-color:forestgreen;
+    height: 70px;
+    letter-spacing: 1px;
+    float: left;
+    border-radius: 50px;
+    font-family: cursive;
+    box-shadow: 3px 3px darkgreen;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 120px;   
+}
+
 #boton{
     background-color: darkgreen;
     height: 40px;
