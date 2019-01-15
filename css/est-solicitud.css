@@ -62,6 +62,23 @@ main{
     margin-left: -18%;
 }
 
+#boton2{
+    margin-top: 340px;
+   background-color:darkred;
+    height: 40px;
+    letter-spacing: 1px;
+    float: left;
+    border-radius: 50px;
+    font-family: cursive;
+    box-shadow: 3px 3px red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 210px;
+    margin-left: -79%;
+}
+
 #boton1{
   background-color:forestgreen;
     height: 70px;
@@ -88,7 +105,8 @@ main{
     color: white;
     font-size: 16px;
     cursor: pointer;
-    width: 80px;    
+    width: 80px; 
+    margin-left: -5%;
 }
 
 .tabla{

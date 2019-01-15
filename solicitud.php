@@ -63,6 +63,8 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                   <form action="Pag/resguardoMovEqui.php" method="post" class="btn">
                       <input type="submit" value="Generar" id="boton1">
                   </form> 
+                  
+                   <a href="adm.php"><input type="submit" value="Realizar nueva solicitud" id="boton2"></a>
                    
                  <div class="tabla">
                      <table>
