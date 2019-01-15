@@ -1,3 +1,7 @@
+<?php
+		session_start();
+        
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +32,7 @@
         <div class="titulo">
             <h1>Solicitud de Compra</h1>
         </div>
-        <form action="php/login.php" method="post" enctype="application/x-www-form-urlencoded">
+        <form action="php/admi.php" method="post" enctype="application/x-www-form-urlencoded">
           
       <div class="text">
           <div class="t1">
@@ -38,13 +42,14 @@
             <br/><br/>
            <h3 style="text-align: center;">Cargo:</h3>
             </div>     
-             <div class="t2">                <input type="text" name="aread" placeholder="Escribe algo..." style="height: 20px;" >
+             <div class="t2">
+                 <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
                
                
-                <input type="text" name="aread" placeholder="Escribe algo..." >
+                <input type="text" name="solicitante" placeholder="Escribe algo..." required>
                 
                                               
-                <input type="text" name="aread" placeholder="Escribe algo..." >
+                <input type="text" name="cargo" placeholder="Escribe algo..." required>
 
                 
             </div>

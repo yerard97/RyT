@@ -18,11 +18,12 @@ if($lugar=='SG'){
 }else if($lugar=='ALM'){
     $l='Almacen';
 }
-$result = mysqli_query($mysqli, "SELECT password,dNombre FROM usuariosistema us,usuario u ,departamentos d where us.idUsuariosSistema=u.idUsuario && d.idDepartamentos = u.idDepartamentos &&  user='$user';");
+$result = mysqli_query($mysqli, "SELECT password,dNombre FROM usuariosistema us,usuario u ,departamentos d where us.idUsuariosSistema=u.idUsuario && d.idDepartamentos = u.uidDepartamentos &&  user='$user';");
+
 $row = mysqli_fetch_assoc($result);
 $hash = password_hash($row['password'],PASSWORD_DEFAULT);
 	if (password_verify($pass, $hash)) {
-       // echo $row['dNombre'];
+        //echo $lugar;
         //echo $l;
          //echo strcasecmp($l,$row['dNombre']);
         if(strcasecmp($l,$row['dNombre'])==0){
@@ -56,7 +57,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         }else if(val.trim()==='CONT'){
                  setTimeout(function(){  location.href ='../cont.html';}, 1000);
         }else if(val.trim()==='ADM'){
-                 setTimeout(function(){  location.href ='../adm.html';}, 1000);
+                 setTimeout(function(){  location.href ='../adm.php';}, 1000);
         }else if(val.trim()==='ALM'){
                 setTimeout(function(){  location.href ='../alm.html';}, 1000); 
         }
