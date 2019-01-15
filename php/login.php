@@ -63,16 +63,39 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         }
         </script>";
 	   } else{
-            	echo "<script type='text/javascript'>
-        alert('Error area no asignada');
+                 echo "       <!doctype html>
+            <html>
+            <head>
+                <title>Sweet Alert Plugin</title>
+                <script src='../lib/sweetalert.min.js'></script>
+                <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
+                
+
+            </head>
+                </html>";
+            	echo "
+                <script type='text/javascript'>
+
+        swal('Área no asignada');
         var val=' $lugar';
-            location.href ='../index.html';
+             setTimeout(function(){location.href ='../index.html';}, 1000); 
         </script>";
         }
 	} else {
+        echo "       <!doctype html>
+            <html>
+            <head>
+                <title>Sweet Alert Plugin</title>
+                <script src='../lib/sweetalert.min.js'></script>
+                <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
+                
+
+            </head>
+                </html>";
 		echo "<script type='text/javascript'>
-        alert('Usuario o Contraseña Incorrectos');
-        location.href ='../index.html#openmodal';
+        swal('Usuario o Contraseña Incorrectos');
+        
+        setTimeout(function(){location.href ='../index.html';}, 1000); 
         </script>
         ";			
 	}

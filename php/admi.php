@@ -20,7 +20,7 @@
     }
     $lastr+=1;
     $fecha = date("Y-m-d");
-    $query = "INSERT INTO solicitudcompra VALUES ($lastr,'$cargo', '$fecha', $usuario);";
+    $query = "INSERT INTO solicitudcompra VALUES ($lastr,'$are', '$fecha', $usuario);";
     if($mysqli->query($query)){
         $_SESSION['idsolcomp'] = $lastr;	
 
