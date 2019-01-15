@@ -10,7 +10,6 @@ main{
     font-family: cursive;
     width: 100%;
     font-size: 55px;
-    position: fixed;
     text-align: center;
 }
 
@@ -46,7 +45,7 @@ main{
 }
 .text{
     width: 100%;
-    padding: 150px;
+    padding: 40px;
     justify-content: center;
     display: flex;
     font-size: 14.5px;
@@ -76,7 +75,7 @@ main{
     font-weight: bold;
     cursor: pointer;
     width: 210px;
-    margin-left: -79%;
+    margin-left: -55%;
 }
 
 #boton1{
@@ -92,6 +91,7 @@ main{
     font-weight: bold;
     cursor: pointer;
     width: 120px;   
+    margin-left: 40%;
 }
 
 #boton{
@@ -106,7 +106,6 @@ main{
     font-size: 16px;
     cursor: pointer;
     width: 80px; 
-    margin-left: -5%;
 }
 
 .tabla{
