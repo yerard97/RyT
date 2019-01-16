@@ -12,7 +12,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Administración</title>
+    <title>Almacén</title>
     <link rel="stylesheet" href="iconos/css/fontello.css">
     <link rel="stylesheet" href="iconos">
     <link rel="stylesheet" href="css/est-menu.css">
@@ -36,16 +36,21 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     
     <main>
         <div class="titulo">
-            <h1>Solicitud de Compra</h1>
+            <h1>Vale de Salida</h1>
         </div>
           
            <div class="text">
           <div class="t1">
-           <h3 style="text-align: center;">Producto:</h3>
+           <h3 style="text-align: center;">No. Partida:</h3>
+           <br/><br/><br/>
+           <h3 style="text-align: center;">Cantidad:</h3>
+            <br/><br/><br/>
+           <h3 style="text-align: center;">Unidad de medida:</h3>
            <br/><br/><br/>
            <h3 style="text-align: center;">Descripción:</h3>
-            <br/><br/><br/>
-           <h3 style="text-align: center;">Cantidad:</h3>
+           <br/><br/><br/>
+           <h3 style="text-align: center;">Cantidad entregada:</h3>
+           
             </div>   
             
             <form action="php/registrarvs.php" method="post">
@@ -54,9 +59,16 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                
                 <input type="text" name="descripcion" id="descripcion" placeholder="Escribe algo..." required>  
                                     
+                                    
                 <input type="text" name="cantidad" id="cantidad" placeholder="Escribe algo..." required >
+                                  
                  
+                <input type="text" name="cantidad" id="cantidad" placeholder="Escribe algo..." required >
+                
+                <input type="text" name="cantidad" id="cantidad" placeholder="Escribe algo..." required >
+                  <div class="ins">
                   <input type="submit" value="Insertar" id="boton">
+                  </div>
             </div>
                 </form> 
                 
@@ -65,16 +77,18 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                   </form> 
                   
                    <div class="nuevo">
-                   <a href="adm.php"><input type="submit" value="Realizar nueva solicitud" id="boton2"></a>
+                   <a href="alm.php"><input type="submit" value="Realizar nuevo vale" id="boton2"></a>
                    </div>
                    
                  <div class="tabla">
                      <table>
                   <thead>
                     <tr style="background: #118327;">
-                         <th>PRODUCTO</th>
-                         <th>DESCRIPCIÓN</th>
+                         <th>No. PARTIDA</th>
                          <th>CANTIDAD</th>
+                         <th>UNIDAD DE MEDIDA</th>
+                         <th>DESCRIPCION</th>
+                         <th>CANTIDAD ENTREGADA</th>
                      </tr>
                  </thead> 
                  

@@ -42,6 +42,10 @@ main{
 #rep{
     position: fixed;
 }
+
+#rep1{
+    width: 80px; height: 23px; border-radius: 8px; background-color:cadetblue; color: white; font-size: 13px; font-family:cursive;  position: fixed; cursor: pointer; border-color: cadetblue; margin-top: -2px; margin-left: 240px; 
+}
 #boton{
    background-color: darkgreen;
     height: 30px;
@@ -125,6 +129,9 @@ tr:nth-child(odd){
     }
     .buscar{
         margin-left: 10%;
+    }
+    #rep1{
+        margin-left: 200px;
     }
 
 }

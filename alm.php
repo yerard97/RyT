@@ -36,14 +36,13 @@
           
       <div class="text">
           <div class="t1">
-           <h3 style="text-align: center;">Área que solicita:</h3>
+           <h3 style="text-align: center;">Dirección del solicitante:</h3>
            <br/><br/>
-           <h3 style="text-align: center;">Solicitante:</h3>
+           <h3 style="text-align: center;">Solicita:</h3>
             <br/><br/>
-           <h3 style="text-align: center;">Cargo:</h3>
+           <h3 style="text-align: center;">Cargo del que solicita:</h3>
             </div>     
-             <div class="t2">
-                 <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
+             <div class="t2">                <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
                
                
                 <input type="text" name="solicitante" placeholder="Escribe algo..." required>
