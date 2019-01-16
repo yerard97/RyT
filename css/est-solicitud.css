@@ -50,6 +50,7 @@ main{
     display: flex;
     font-size: 14.5px;
 }
+
 .t2{
     margin-top: -20px;
     white-space:pre-wrap;
@@ -62,12 +63,13 @@ main{
 }
 
 .nuevo{
-    height: 20px;
-    margin-top:340px;
-    
+    margin-top: 340px;
+    padding-left: 40px;
+    position: absolute;
 }
+
 #boton2{
-   background-color:darkred;
+   background-color:red;
     height: 40px;
     letter-spacing: 1px;
     float: left;
