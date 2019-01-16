@@ -64,7 +64,7 @@ main{
 
 .nuevo{
     margin-top: 340px;
-    padding-left: 40px;
+    margin-left: -350px;
     position: absolute;
 }
 
@@ -115,7 +115,8 @@ main{
 }
 
 .tabla{
-    margin-left: 10%;
+    margin-top: -4px;
+    margin-left: 15%;
     width: 100%;
 }
 
