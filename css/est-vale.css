@@ -50,6 +50,7 @@ main{
     display: flex;
     font-size: 14.5px;
 }
+
 .t2{
     margin-top: -20px;
     white-space:pre-wrap;
@@ -61,8 +62,13 @@ main{
     margin-left: -18%;
 }
 
-#boton2{
+.nuevo{
     margin-top: 340px;
+    margin-left: -350px;
+    position: absolute;
+}
+
+#boton2{
    background-color:darkred;
     height: 40px;
     letter-spacing: 1px;
@@ -109,7 +115,8 @@ main{
 }
 
 .tabla{
-    margin-left: 10%;
+    margin-top: -4px;
+    margin-left: 15%;
     width: 100%;
 }
 

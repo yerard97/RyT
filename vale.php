@@ -64,7 +64,9 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                       <input type="submit" value="Generar" id="boton1">
                   </form> 
                   
+                   <div class="nuevo">
                    <a href="adm.php"><input type="submit" value="Realizar nueva solicitud" id="boton2"></a>
+                   </div>
                    
                  <div class="tabla">
                      <table>
