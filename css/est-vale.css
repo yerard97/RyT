@@ -61,12 +61,8 @@ main{
     margin-left: -18%;
 }
 
-.nuevo{
-    height: 20px;
-    margin-top:340px;
-    
-}
 #boton2{
+    margin-top: 340px;
    background-color:darkred;
     height: 40px;
     letter-spacing: 1px;

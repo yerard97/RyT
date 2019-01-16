@@ -16,7 +16,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     <link rel="stylesheet" href="iconos/css/fontello.css">
     <link rel="stylesheet" href="iconos">
     <link rel="stylesheet" href="css/est-menu.css">
-    <link rel="stylesheet" href="css/est-solicitud.css">
+    <link rel="stylesheet" href="css/est-vale.css">
     <link rel="stylesheet" href="css/est-modal.css">
 </head>
 <body>
@@ -31,7 +31,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
               <li><a href="php/logout.php" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
-        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Administración</h2>
+        <h2 style="font-family:cursive; text-align: center; margin-top: -46px; margin-left: 30% " >Almacén</h2>
     </header>
     
     <main>
@@ -48,7 +48,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
            <h3 style="text-align: center;">Cantidad:</h3>
             </div>   
             
-            <form action="php/registrarsc.php" method="post">
+            <form action="php/registrarvs.php" method="post">
             
              <div class="t2">                <input type="text" name="producto" id="producto" placeholder="Escribe algo..." style="height: 20px;" required> 
                
