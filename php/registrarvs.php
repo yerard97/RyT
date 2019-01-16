@@ -6,12 +6,14 @@ $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
 
-$producto=$_POST["producto"];
-$descripcion=$_POST["descripcion"];
+$var = $_SESSION['idvalsal'];
+$partida=$_POST["partida"];
 $cantidad=$_POST["cantidad"];
-$var = $_SESSION['idsolcomp'];
-//echo $var;
-$insertar="INSERT INTO detallesc (dscsolicitudCompra,dscCantidad,dscDescripcion,dscNombre) VALUES ('$var','$cantidad','$descripcion','$producto')";
+$unidad=$_POST["unidad"];
+$descripcion=$_POST["descripcion"];
+$cantidade=$_POST["cantidade"];
+
+$insertar="insert into detallevs values ($var,1,'$partida',$cantidad,'$unidad','$descripcion',$cantidade);";
 
 
 $resultado=mysqli_query($mysqli,$insertar);

@@ -19,6 +19,26 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     <link rel="stylesheet" href="css/est-solicitud.css">
     <link rel="stylesheet" href="css/est-modal.css">
 </head>
+<script type="text/javascript">
+    
+     function eliminar(){
+         swal('Escribe el No. Partida del producto a eliminar',
+              {
+             content:"input"
+         })
+             .then(
+             (value)=>{
+                 
+                 <?php 
+                 
+                 $mysqli->query("DELETE FROM detallevs WHERE NoPartida=234 && dvsvaleSalida=$var");
+                 //swal('Eliminado Correctamente');
+                 
+                 ?>
+             });
+     }
+    
+    </script>
 <body>
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
@@ -65,6 +85,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                   </form> 
                   <div class="nuevo">
                    <a href="adm.php"><input type="submit" value="Realizar nueva solicitud" id="boton2"></a>
+                     <input type="submit" value="Eliminar" id="boton10" onclick="eliminar()">
                    </div>
                  <div class="tabla">
                      <table>

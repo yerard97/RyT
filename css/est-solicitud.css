@@ -68,6 +68,21 @@ main{
     position: absolute;
 }
 
+
+#boton10{
+    height: 30px;
+    width: 100px;
+    margin-top: 60px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: -150px;
+    cursor: pointer;
+    position: fixed;
+}
+
 #boton2{
    background-color:darkred;
     height: 40px;

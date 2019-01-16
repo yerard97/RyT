@@ -7,22 +7,24 @@
     if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     $are = $_POST['areas']; 
     $solicitante = $_POST['solicitante'];
-    $cargo =$_POST['cargo'];
-    $result = mysqli_query($mysqli, "select idUsuario from usuario where nombre like '$solicitante' && puesto like '$cargo';");
+    $cargos =$_POST['cargos'];
+    $recibe=$_POST["recibe"];
+    $cargor=$_POST["cargor"];
+    $result = mysqli_query($mysqli, "select idUsuario from usuario where nombre like '$solicitante' && puesto like '$cargos';");
     
     $row = mysqli_fetch_assoc($result);
     $usuario =$row['idUsuario'];
-    $result = mysqli_query($mysqli, "SELECT idsolicitudCompra FROM  solicitudcompra order by idsolicitudCompra DESC limit 1;");
-    $row = mysqli_fetch_assoc($result);
-    $lastr =$row['idsolicitudCompra'];
+    $result = mysqli_query($mysqli, "SELECT idvaleSalida  FROM  valesalida order by idvaleSalida  DESC limit 1;");
+    $row1 = mysqli_fetch_assoc($result);
+    $lastr =$row1['idvaleSalida'];
     if($lastr==null){
         $lastr=1;
     }
     $lastr+=1;
     $fecha = date("Y-m-d");
-    $query = "INSERT INTO solicitudcompra VALUES ($lastr,'$are', '$fecha', $usuario);";
+    $query = "INSERT INTO valesalida VALUES ($lastr,'$fecha','$are','$solicitante','ING. ARMANDO PICHARDO IBARRA','$recibe','$cargos','ENCARGADO DE LA DIR. COORD.','$cargor');";
     if($mysqli->query($query)){
-        $_SESSION['idsolcomp'] = $lastr;	
+        $_SESSION['idvalsal'] = $lastr;	
 
         	echo " 
             <script type='text/javascript'>
@@ -45,7 +47,7 @@
         	<script type='text/javascript'>
             var datos = <?= json_encode($mensaje) ?>;
             swal(datos);
-            setTimeout(function(){  location.href ='../vale.php';}, 1000);     
+           setTimeout(function(){  location.href ='../vale.php';}, 1000);     
             </script>;
 <?php
     }

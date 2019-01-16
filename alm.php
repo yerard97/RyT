@@ -52,13 +52,13 @@
                 <input type="text" name="solicitante" placeholder="Escribe algo..." required>
                 
                                               
-                <input type="text" name="cargo" placeholder="Escribe algo..." required>
+                <input type="text" name="cargos" placeholder="Escribe algo..." required>
 
                                               
-                <input type="text" name="cargo" placeholder="Escribe algo..." required>
+                <input type="text" name="recibe" placeholder="Escribe algo..." required>
                 
                                               
-                <input type="text" name="cargo" placeholder="Escribe algo..." required>
+                <input type="text" name="cargor" placeholder="Escribe algo..." required>
             </div>
                  
              
