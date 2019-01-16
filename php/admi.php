@@ -22,7 +22,8 @@
     $fecha = date("Y-m-d");
     $query = "INSERT INTO solicitudcompra VALUES ($lastr,'$are', '$fecha', $usuario);";
     if($mysqli->query($query)){
-        $_SESSION['idsolcomp'] = $lastr;	
+        $_SESSION['idsolcomp'] = $lastr;
+        $_SESSION['idUsuario']= $usuario;
 
         	echo " 
             <script type='text/javascript'>

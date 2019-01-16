@@ -42,7 +42,8 @@
             <br/><br/>
            <h3 style="text-align: center;">Cargo:</h3>
             </div>     
-             <div class="t2">                <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
+             <div class="t2">
+                 <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
                
                
                 <input type="text" name="solicitante" placeholder="Escribe algo..." required>
@@ -56,7 +57,7 @@
              
          </div> 
           
-           <a href="solicitud.html"><input type="submit" value="Generar" id="boton"></a>
+          <input type="submit" value="Generar" id="boton">
            
          </form>    
     </main>
