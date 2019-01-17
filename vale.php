@@ -20,27 +20,38 @@ $var = $_SESSION['idvalsal'];
     <link rel="stylesheet" href="css/est-modal.css">
     
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
     
 </head>
 
 <script type="text/javascript">
     
-     function eliminar(){
-         swal('Escribe el No. Partida del producto a eliminar',
-              {
-             content:"input"
-         })
-             .then(
-             (value)=>{
-                 
-                 <?php 
-                 
-                 $mysqli->query("DELETE FROM detallevs WHERE NoPartida=234 && dvsvaleSalida=$var");
-                 //swal('Eliminado Correctamente');
-                 
-                 ?>
-             });
+     async function eliminar(){
+        
+            const {value:url} =  await Swal({
+                title: 'Escribe el No. Partida del producto a eliminar',
+              input: 'text',
+              inputPlaceholder: 'Enter the URL'
+            })
+
+            if (url) {
+                //alert(url);
+                location.href ='php/eliminarVS.php?variable1='.concat(url);
+
+
+               
+               // echo "PHPvariable = ".$as;
+               // echo "<script>alert('asdfgbhn')
+                //echo "DELETE FROM detallevs WHERE NoPartida=$as && dvsvaleSalida=$var;";
+                //$mysqli->query("DELETE FROM detallevs WHERE NoPartida=$as && dvsvaleSalida=$var;");
+               
+            }
+        
+         
+        
+         
      }
+   
     
     </script>
     
@@ -149,9 +160,9 @@ $var = $_SESSION['idvalsal'];
                  </div>
              
          </div> 
-         
+         <div id="id1"></div>
            
-         </form>    
+        
     </main>
     
 </body>
