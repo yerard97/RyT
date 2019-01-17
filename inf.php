@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/est-menu.css">
     <link rel="stylesheet" href="css/est-inf.css">
     <link rel="stylesheet" href="css/est-modal.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
 </head>
 <script type="text/javascript">
     function Mostrar(){
@@ -29,7 +31,7 @@
             }
         }
     
-    function Mostrar2(){
+    /*function Mostrar2(){
      document.getElementById("cont1").style.display ="block";
         document.getElementById("tabla").style.marginTop="130px";
         document.getElementById("oculto").style.marginTop="130px";
@@ -53,6 +55,25 @@
                 Ocultar2();
             }
         }
+    */
+    async function editar(){
+        
+            const {value:url} =  await Swal({
+               title:"Llena sólo los campos a editar",
+               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>',
+                focusConfirm:false,
+                preConfirm:()=>{
+                            return[
+                                document.getElementById('val1').value,
+                                document.getElementById('val2').value
+                            ]
+                            }
+            })
+
+            if (url) {
+                location.href ='php/eliminarSC.php?variable1='.concat(url);
+  }
+     }
     
     
 </script>
@@ -87,13 +108,13 @@
              <button id="rep1" >Buscar</button>
          </div>
          <div class=repo>
-         <a href="cont-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
+         <a href="inf-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          </div>
         
         
         <div class=conten id="con">
          <input type="submit" id="boton" value="Mostrar" onclick="Mostrar_Ocultar()"/>
-         <input type="submit" id="boton1" value="Editar" onclick="Edit()"/>
+         <input type="submit" id="boton1" value="Editar" onclick="editar()"/>
              
              <div id="ed" style="visibility: hidden;">
                     <h4 >No. Inventario:  </h4>
@@ -121,9 +142,9 @@
                   <thead>
                     <tr style="background: #118327;">
                          <th>No. INV.</th>
+                         <th>NOMBRE PRODUCTO</th>
                          <th>DESCRIPCIÓN</th>
                          <th>AREA ASIGNADA</th>
-                         <th>FORMA COMPRA</th>
                          <th>FACTURA</th>
                          <th>RESPONSABLE</th>
                          <th>COSTO c/IVA</th>
@@ -189,7 +210,7 @@
                      <th id="oculto1">MATERIAL</th>
                       <th id="oculto1" class="t2">MARCA</th>
                         <th id="oculto1" class="t2">MODELO</th>
-                         <th id="oculto1" class="t2">TIPO DEL PRODUCTO</th>
+                         <th id="oculto1" class="t2">FORMA COMPRA</th>
                          <th id="oculto1" class="t2">No. de FACTURA</th>
                          <th id="oculto1" class="t2">ORIGEN DE PRODUCTO</th>
                          <th id="oculto1" class="t2">IVA</th>

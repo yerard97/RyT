@@ -8,6 +8,7 @@ section.modalDialog{
     position:fixed;
     z-index: 1; 
 }
+
 section.modalDialog h2{
     background: none;
     color:whitesmoke;
