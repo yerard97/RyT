@@ -32,12 +32,12 @@ $var = $_SESSION['idvalsal'];
                 title: 'Escribe el No. Partida del producto a eliminar',
               input: 'text',
               inputPlaceholder: 'Enter the URL'
-            })
+            });
 
             if (url) {
+                
                 //alert(url);
                 location.href ='php/eliminarVS.php?variable1='.concat(url);
-
 
                
                // echo "PHPvariable = ".$as;
