@@ -36,7 +36,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
      echo "       <!doctype html>
             <html>
             <head>
-                <title>Sweet Alert Plugin</title>
+                <title>Bienvenido</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 
@@ -66,7 +66,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
                  echo "       <!doctype html>
             <html>
             <head>
-                <title>Sweet Alert Plugin</title>
+                <title>Error</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 
@@ -85,7 +85,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         echo "       <!doctype html>
             <html>
             <head>
-                <title>Sweet Alert Plugin</title>
+                <title>Cuidado!</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 
