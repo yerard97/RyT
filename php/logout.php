@@ -7,7 +7,7 @@
 echo "       <!doctype html>
             <html>
             <head>
-                <title>Sweet Alert Plugin</title>
+                <title>Adios</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 
@@ -17,7 +17,7 @@ echo "       <!doctype html>
 	echo " 
     <script type='text/javascript'>
     
-    swal('Hasta la vista baby');
+    swal('Hasta luego');
        
         setTimeout(function(){  location.href ='../index.html'; }, 1000);
         

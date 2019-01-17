@@ -31,13 +31,18 @@ $var = $_SESSION['idvalsal'];
             const {value:url} =  await Swal({
                 title: 'Escribe el No. Partida del producto a eliminar',
               input: 'text',
+<<<<<<< HEAD
               inputPlaceholder: 'Enter the URL'
             });
+=======
+              inputPlaceholder: 'Escribe el No. de Partida'
+            })
+>>>>>>> 7850a9e12547a3f812c2ef8b1f09108533f5be88
 
             if (url) {
                 
                 //alert(url);
-                location.href ='php/eliminarVS.php?variable1='.concat(url);
+                location.href ='php/eliminarSC.php?variable1='.concat(url);
 
                
                // echo "PHPvariable = ".$as;

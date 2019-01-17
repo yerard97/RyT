@@ -10,6 +10,7 @@ $mysqli->set_charset("utf8");
 echo "<!doctype html>
             <html>
             <head>
+                <title>Almacén</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 

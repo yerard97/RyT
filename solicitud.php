@@ -5,7 +5,7 @@ include_once "php/dbconfig.php";
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
-
+$var = $_SESSION['idsolcomp'];
 ?>
 
 <!DOCTYPE html>
@@ -18,19 +18,35 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     <link rel="stylesheet" href="css/est-menu.css">
     <link rel="stylesheet" href="css/est-solicitud.css">
     <link rel="stylesheet" href="css/est-modal.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
 </head>
 <script type="text/javascript">
     
-     function eliminar(){
-         swal('Escribe el No. Partida del producto a eliminar',
-              {
-             content:"input"
-         })
-             .then(
-             (value)=>{
-                 
-                 
-             });
+     async function eliminar(){
+        
+            const {value:url} =  await Swal({
+                title: 'Escribe el número de la fila a eliminar',
+              input: 'text',
+              inputPlaceholder: 'Escribe el no. de fila'
+            })
+
+            if (url) {
+                //alert(url);
+                location.href ='php/eliminarVS.php?variable1='.concat(url);
+
+
+               
+               // echo "PHPvariable = ".$as;
+               // echo "<script>alert('asdfgbhn')
+                //echo "DELETE FROM detallevs WHERE NoPartida=$as && dvsvaleSalida=$var;";
+                //$mysqli->query("DELETE FROM detallevs WHERE NoPartida=$as && dvsvaleSalida=$var;");
+               
+            }
+        
+         
+        
+         
      }
     
     </script>
