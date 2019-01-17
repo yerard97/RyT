@@ -26,15 +26,24 @@ $var = $_SESSION['idsolcomp'];
      async function eliminar(){
         
             const {value:url} =  await Swal({
-                title: 'Escribe el número de la fila a eliminar',
-              input: 'text',
-              inputPlaceholder: 'Escribe el no. de fila'
+               title:"Nombre y descripción del producto a eliminar: ",
+               html:'<input id="val1" placeholder="Nombre del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>',
+                focusConfirm:false,
+                preConfirm:()=>{
+                            return[
+                                document.getElementById('val1').value,
+                                document.getElementById('val2').value
+                            ]
+                            }
             })
 
             if (url) {
-                //alert(url);
-                location.href ='php/eliminarVS.php?variable1='.concat(url);
-
+                
+                //alert(xyz[0]);
+                //alert(xyz[1]);
+                
+                location.href ='php/eliminarSC.php?variable1='.concat(url);
+                
 
                
                // echo "PHPvariable = ".$as;
