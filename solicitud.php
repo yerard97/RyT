@@ -29,12 +29,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
              .then(
              (value)=>{
                  
-                 <?php 
                  
-                 $mysqli->query("DELETE FROM detallevs WHERE NoPartida=234 && dvsvaleSalida=$var");
-                 //swal('Eliminado Correctamente');
-                 
-                 ?>
              });
      }
     
