@@ -1,21 +1,66 @@
 <?php
 session_start();
 //require('fpdf/fpdf.php');
-include_once('solicitudCompraTabla.php');
+include_once('valeSalidaTabla.php');
 include_once "../php/dbconfig.php";
-$idSolicitudCompra = $_SESSION['idsolcomp'];
-$usuario = $_SESSION['idUsuario'];
-
+//$idSolicitudCompra = $_SESSION['idsolcomp'];
+//$usuario = $_SESSION['idUsuario'];
+$varDirSolicitante="DIRECCION SOLICITANTE";
+$varFecha="2019--01-18";
 $pdf=new FPDF('P','mm','Letter');
-$pdf = new solicitudCompraTabla();
+$pdf = new valeSalidaTabla();
+
 $pdf->AddPage();
-$pdf->SetFont('Arial','B',10);
+$pdf->SetFont('Arial','B',9);
 $pdf->Image('img/logo-1.jpg',10,10,18); 
 $pdf->Image('img/logo-2.jpg',174,10,20); 
-$pdf->SetXY(76, 16);
-$pdf->Cell(50,4,utf8_decode('RADIO Y TELEVISION DE HIDALGO'));
-$pdf->SetXY(86, 21);
-$pdf->Cell(50,4,utf8_decode('SOLICITUD DE COMPRA'));
+$pdf->SetXY(53, 16);
+$pdf->Cell(50,4,utf8_decode('DIRECCION DE LA COORDINACION FINANCIERA Y PLANEACIÓN'));
+$pdf->SetFont('Arial','',8);
+$pdf->SetXY(58, 21);
+$pdf->Cell(37,4,utf8_decode('DIRECCION SOLICITANTE: '));
+$pdf->Cell(50,4,utf8_decode($varDirSolicitante));
+$pdf->SetFont('Arial','B',9);
+$pdf->SetXY(78, 26);
+$pdf->Cell(37,4,utf8_decode('VALE DE SALIDA DE ALMACEN'));  
+$pdf->SetXY(72, 30);
+$pdf->Cell(42,4,utf8_decode('FECHA DE LA SOLICITUD: '));
+$pdf->Cell(37,4,utf8_decode($varFecha));
+
+$miCabecera = array('NÚMERO DE PARTIDA', 'CANTIDAD SOLICITADA', 'UNIDAD DE MEDIDA','DESCRIPCION MATERIAL SOLICITADO','CANTIDAD SOLICITADA');
+ 
+//Métodos llamados con el objeto $pdf
+$pdf->fsolcom($miCabecera);
+
+//select NoPartida, dvsCantidad,dvsUnidadMedida,dvsDescripcion,dvsCantidadEntregada from detallevs where dvsvaleSalida=2;
+
+//$pdf->fsolcomt($miCabecera,48);
+//Datos de Conexion
+$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+$mysqli->set_charset("utf8");
+if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
+$result = mysqli_query($mysqli, "select NoPartida, dvsCantidad,dvsUnidadMedida,dvsDescripcion,dvsCantidadEntregada from detallevs where dvsvaleSalida=2");
+//$row = mysqli_fetch_assoc($result);
+$vartemp=48;
+$noCol= mysqli_num_rows ($result);
+$cont=1;
+while($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    $var=array($row1['NoPartida'],$row1['dvsCantidad'],$row1['dvsUnidadMedida'],$row1['dvsDescripcion'],$row1['dvsCantidadEntregada']);
+    $pdf->fsolcomt($var,$vartemp);
+    $vartemp=$vartemp+8;
+    if($cont==17){
+        $pdf->AddPage();
+        $pdf->fsolcomt($miCabecera,50);
+        $vartemp=58;
+    }else if($cont == 21){
+        //$pdf->AddPage();
+        //$pdf->fsolcomt($miCabecera,50);
+        //$vartemp=58;
+    }
+    $cont=$cont+1;
+}
+//fsolcomt
+/*
 //Datos de Conexion
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
@@ -120,7 +165,7 @@ $pdf->Cell(50,4,utf8_decode(strtoupper($nom)));
 $pdf->Line(15, 260, 63, 260);
 $pdf->Line(83, 260, 133, 260);
 $pdf->Line(156, 260, 205, 260);
-mysqli_close($mysqli);
+mysqli_close($mysqli);*/
 $pdf->Output();
 
 
