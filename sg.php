@@ -34,7 +34,7 @@
         
             const {value:url} =  await Swal({
                title:"Inserta las propiedades del nuevo producto",
-               html:'<input id="val1" placeholder="Nombre del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>',
+               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Área Asignada" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Color" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Material" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Marca" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Modelo" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Origen de Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="IVA" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -45,7 +45,7 @@
             })
 
             if (url) {
-                location.href ='php/eliminarSC.php?variable1='.concat(url);
+                location.href ='php/sg.php?variable1='.concat(url);
   }
      }
     
@@ -56,7 +56,7 @@
         
             const {value:url} =  await Swal({
                title:"Llena sólo los campos a editar",
-               html:'<input id="val1" placeholder="Nombre del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>',
+               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Área Asignada" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Color" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Material" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Marca" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Modelo" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Origen de Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="IVA" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -227,7 +227,6 @@
                       <th id="oculto1" class="t2">MARCA</th>
                         <th id="oculto1" class="t2">MODELO</th>
                          <th id="oculto1" class="t2">FORMA COMPRA</th>
-                         <th id="oculto1" class="t2">No. de FACTURA</th>
                          <th id="oculto1" class="t2">ORIGEN DE PRODUCTO</th>
                          <th id="oculto1" class="t2">IVA</th>
                          </tr>
@@ -240,7 +239,6 @@
                      <td>Cinco</td>
                      <td>Seis</td>
                      <td>Siete</td>
-                     <td>Ocho</td>
                      
                      
                  </tr>
@@ -253,7 +251,6 @@
                      <td>Cinco</td>
                      <td>Seis</td>
                      <td>Siete</td>
-                     <td>Ocho</td>
                      
                  </tr>
                  
@@ -265,7 +262,7 @@
                      <td>Cinco</td>
                      <td>Seis</td>
                      <td>Siete</td>
-                     <td>Ocho</td>
+                     
                      
                  </tr>
              </table>

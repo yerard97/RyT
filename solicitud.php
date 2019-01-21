@@ -26,7 +26,7 @@ $var = $_SESSION['idsolcomp'];
      async function eliminar(){
         
             const {value:url} =  await Swal({
-               title:"Nombre y descripción del producto a eliminar: ",
+               title:"Nombre y descripción del producto a eliminar",
                html:'<input id="val1" placeholder="Nombre del producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción del producto" required>',
                 focusConfirm:false,
                 preConfirm:()=>{

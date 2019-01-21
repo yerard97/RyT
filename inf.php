@@ -60,7 +60,7 @@
         
             const {value:url} =  await Swal({
                title:"Llena sólo los campos a editar",
-               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>',
+               html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label><input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<label style="font-family:cursive;">Campos a editar:</label>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -211,7 +211,7 @@
                       <th id="oculto1" class="t2">MARCA</th>
                         <th id="oculto1" class="t2">MODELO</th>
                          <th id="oculto1" class="t2">FORMA COMPRA</th>
-                         <th id="oculto1" class="t2">No. de FACTURA</th>
+                         
                          <th id="oculto1" class="t2">ORIGEN DE PRODUCTO</th>
                          <th id="oculto1" class="t2">IVA</th>
                          </tr>
@@ -224,7 +224,19 @@
                      <td>Cinco</td>
                      <td>Seis</td>
                      <td>Siete</td>
-                     <td>Ocho</td>
+                     
+                     
+                     
+                 </tr>
+                 
+                 <tr>
+                     <td>Uno</td>
+                     <td>Dos</td>
+                     <td>Tres</td>
+                     <td>Cuatro</td>
+                     <td>Cinco</td>
+                     <td>Seis</td>
+                     <td>Siete</td>
                      
                      
                  </tr>
@@ -237,19 +249,7 @@
                      <td>Cinco</td>
                      <td>Seis</td>
                      <td>Siete</td>
-                     <td>Ocho</td>
                      
-                 </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
                      
                  </tr>
              </table>
