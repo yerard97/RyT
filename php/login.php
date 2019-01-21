@@ -51,9 +51,9 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         
         var val=' $lugar';
         if(val.trim()==='SG'){
-             setTimeout(function(){  location.href ='../sg.html';}, 1000);
+             setTimeout(function(){  location.href ='../sg.php';}, 1000);
         }else if(val.trim()==='INF'){
-                 setTimeout(function(){  location.href ='../inf.html';}, 1000);
+                 setTimeout(function(){  location.href ='../inf.php';}, 1000);
         }else if(val.trim()==='CONT'){
                  setTimeout(function(){  location.href ='../cont.html';}, 1000);
         }else if(val.trim()==='ADM'){

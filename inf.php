@@ -14,10 +14,11 @@
 <script type="text/javascript">
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
-        
+        document.getElementById("tabla").style.display ="none";
         }
         function Ocultar(){
      document.getElementById("oculto").style.display ="none";
+            document.getElementById("tabla").style.display ="block";
         }
         function Mostrar_Ocultar(){
             var oculto=document.getElementById("oculto");
@@ -205,7 +206,7 @@
                 <table>
                  <thead>
                      <tr style="background: #118327;" id="tab2">
-                         
+                        <th>No. INV.</th>   
                      <th id="oculto1">COLOR</th>
                      <th id="oculto1">MATERIAL</th>
                       <th id="oculto1" class="t2">MARCA</th>

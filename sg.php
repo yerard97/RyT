@@ -1,3 +1,13 @@
+<?php
+session_start();
+include_once "php/dbconfig.php";
+
+$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+$mysqli->set_charset("utf8");
+if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,10 +23,11 @@
 <script type="text/javascript">
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
-        
+        document.getElementById("tabla").style.display ="none";
         }
         function Ocultar(){
      document.getElementById("oculto").style.display ="none";
+            document.getElementById("tabla").style.display ="block";
         }
         function Mostrar_Ocultar(){
             var oculto=document.getElementById("oculto");
@@ -34,21 +45,52 @@
         
             const {value:url} =  await Swal({
                title:"Inserta las propiedades del nuevo producto",
-               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Área Asignada" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Color" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Material" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Marca" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Modelo" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Origen de Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="IVA" required>',
+               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+
+                '<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+
+                '<input id="val3" placeholder="Descripción" required>'+'<br/>'+'<br/>'+
+                '<input id="val4" placeholder="Factura" required>'+'<br/>'+'<br/>'+
+                '<input id="val5" placeholder="Responsable" required>'+'<br/>'+'<br/>'+
+                '<input id="val6" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+
+                '<input id="val7" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+
+                '<input id="val8" placeholder="Status" required>'+'<br/>'+'<br/>'+
+                '<input id="val9" placeholder="Serie" required>'+'<br/>'+'<br/>'+
+                '<input id="val10" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+
+                '<input id="val11" placeholder="Color" required>'+'<br/>'+'<br/>'+
+                '<input id="val12" placeholder="Material" required>'+'<br/>'+'<br/>'+
+                '<input id="val13" placeholder="Marca" required>'+'<br/>'+'<br/>'+
+                '<input id="val14" placeholder="Modelo" required>'+'<br/>'+'<br/>'+
+                '<input id="val15" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+
+                '<input id="val16" placeholder="IVA" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
                                 document.getElementById('val1').value,
-                                document.getElementById('val2').value
+                                document.getElementById('val2').value,
+                                document.getElementById('val3').value,
+                                document.getElementById('val4').value,
+                                document.getElementById('val5').value,
+                                document.getElementById('val6').value,
+                                document.getElementById('val7').value,
+                                document.getElementById('val8').value,
+                                document.getElementById('val9').value,
+                                document.getElementById('val10').value,
+                                document.getElementById('val11').value,
+                                document.getElementById('val12').value,
+                                document.getElementById('val13').value,
+                                document.getElementById('val14').value,
+                                document.getElementById('val15').value,
+                                document.getElementById('val16').value
                             ]
                             }
             })
 
             if (url) {
-                location.href ='php/sg.php?variable1='.concat(url);
+
+                
+                location.href ='php/registrarsg.php?variable1='.concat(url);
   }
      }
-    
+     
     
     
     
@@ -171,100 +213,68 @@
                          
                      </tr>
                  </thead> 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
+                  <?php
+                   $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario";
+                   $result=mysqli_query($mysqli,$sql);
                     
-                 </tr>
-                 
+                   while($mostrar=mysqli_fetch_array($result)){
+                     ?>  
+                   
                  <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
-                    
+                     <td><?php echo $mostrar['No.Inv.']?></td>
+                     <td><?php echo $mostrar['Tipo']?></td>
+                     <td><?php echo $mostrar['Descripcion']?></td>
+                     <td><?php echo $mostrar['dNombre']?></td>
+                     <td><?php echo $mostrar['idFactura']?></td>
+                     <td><?php echo $mostrar['Nombre']?></td>
+                     <td><?php echo $mostrar['CostoCIVA']?></td>
+                     <td><?php echo $mostrar['CostoSIVA']?></td>
+                     <td><?php echo $mostrar['Status']?></td>
+                     <td><?php echo $mostrar['Serie']?></td>
+                     <td><?php echo $mostrar['Observaciones']?></td>
                  </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
-                 
-                 </tr>
+                    <?php
+                   }
+                     ?>
              </table>    
              </div>
+               
+               
                 <div id="oculto" style="display:none">
                 <table>
                  <thead>
                      <tr style="background: #118327;" id="tab2">
-                         
+                     <th id="oculto1">No.Inv.</th>    
                      <th id="oculto1">COLOR</th>
                      <th id="oculto1">MATERIAL</th>
                       <th id="oculto1" class="t2">MARCA</th>
                         <th id="oculto1" class="t2">MODELO</th>
                          <th id="oculto1" class="t2">FORMA COMPRA</th>
-                         <th id="oculto1" class="t2">ORIGEN DE PRODUCTO</th>
+                         <th id="oculto1" class="t2">ÁREA DE ORIGEN</th>
                          <th id="oculto1" class="t2">IVA</th>
                          </tr>
                          </thead>
-                         <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatigivieivevcgeingeefhpeifiqeugfcneipmugcuegicunmro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     
-                     
-                 </tr>
-                 
+                        <?php
+                  
+                   $result=mysqli_query($mysqli,$sql);
+                    
+                   while($mostrar=mysqli_fetch_array($result)){
+                     ?>  
+                   
                  <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
+                     <td><?php echo $mostrar['No.Inv.']?></td>
+                     <td><?php echo $mostrar['Color']?></td>
+                     <td><?php echo $mostrar['Material']?></td>
+                     <td><?php echo $mostrar['Marca']?></td>
+                     <td><?php echo $mostrar['Modelo']?></td>
+                     <td><?php echo $mostrar['FormaCompra']?></td>
+                     <td><?php echo $mostrar['Origen']?></td>
+                     <td><?php echo $mostrar['IVA']?></td>
                      
                  </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     
-                     
-                 </tr>
+                    <?php
+                   }
+                     ?>
              </table>
              
          </div>             
@@ -272,3 +282,8 @@
     </main>
 </body>
 </html>
+
+
+
+
+
