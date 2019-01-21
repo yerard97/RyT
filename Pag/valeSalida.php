@@ -7,6 +7,12 @@ include_once "../php/dbconfig.php";
 //$usuario = $_SESSION['idUsuario'];
 $varDirSolicitante="DIRECCION SOLICITANTE";
 $varFecha="2019--01-18";
+$noSolicita="lilian montiel";
+$carSolicita="Encargada de cordinacion y videoteca";
+$nomAutoriza="Ing. Armando Pichardo Ibarra";
+$carAutoriza="Encargado de la coordinacion financiera y planeacion";
+$noRecibe="lilian montiel";
+$carRecibe="Encargada de cordinacion y videoteca";
 $pdf=new FPDF('P','mm','Letter');
 $pdf = new valeSalidaTabla();
 
@@ -17,7 +23,7 @@ $pdf->Image('img/logo-2.jpg',174,10,20);
 $pdf->SetXY(53, 16);
 $pdf->Cell(50,4,utf8_decode('DIRECCION DE LA COORDINACION FINANCIERA Y PLANEACIÓN'));
 $pdf->SetFont('Arial','',8);
-$pdf->SetXY(58, 21);
+$pdf->SetXY(67, 21);
 $pdf->Cell(37,4,utf8_decode('DIRECCION SOLICITANTE: '));
 $pdf->Cell(50,4,utf8_decode($varDirSolicitante));
 $pdf->SetFont('Arial','B',9);
@@ -59,6 +65,45 @@ while($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     }
     $cont=$cont+1;
 }
+$pdf->SetXY(15, 220);
+$pdf->MultiCell(180,15,'sdfsdfsd',1,'C');
+
+
+$pdf->SetFont('Arial','B',7);
+$pdf->SetXY(33, 240);
+$pdf->Cell(50,4,utf8_decode('SOLICITA'));
+$pdf->SetXY(103, 240);
+$pdf->Cell(50,4,utf8_decode('AUTORIZA'));
+$pdf->SetXY(171, 240);
+$pdf->Cell(50,4,utf8_decode('RECIBE'));
+
+//Cargos
+$pdf->SetXY(10, 268);
+$pdf->MultiCell(58,4,utf8_decode($carSolicita),0,'C');
+$pdf->SetXY(78, 268);
+$pdf->MultiCell(63,4,utf8_decode($carAutoriza),0,'C');
+$pdf->SetXY(155, 268);
+$pdf->MultiCell(50,4,utf8_decode($carRecibe),0,'C');
+
+//Nombres
+$pdf->SetXY(10, 262);
+$pdf->Cell(58,4,utf8_decode($noSolicita),0,0,'C');
+$pdf->SetXY(78, 262);
+$pdf->Cell(63,4,utf8_decode($nomAutoriza),0,0,'C');
+$pdf->SetXY(155, 262);
+$pdf->Cell(50,4,utf8_decode($noRecibe),0,0,'C');
+
+$pdf->Line(15, 260, 63, 260);
+$pdf->Line(83, 260, 135, 260);
+$pdf->Line(156, 260, 205, 260);
+
+/*$noSolicita="lilian montiel";
+$carSolicita="Encargada de cordinacion y videoteca";
+$nomAutoriza="Ing. Armando Pichardo Ibarra";
+$carAutoriza="Encargado de la coordinacion financiera y planeacion";
+$noRecibe="lilian montiel";
+$carRecibe="Encargada de cordinacion y videoteca";*/
+
 //fsolcomt
 /*
 //Datos de Conexion
