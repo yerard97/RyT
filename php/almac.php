@@ -10,6 +10,11 @@
     $cargos =$_POST['cargos'];
     $recibe=$_POST["recibe"];
     $cargor=$_POST["cargor"];
+    $_SESSION['areaSolicitante']= $are;
+    $_SESSION['nomSolicitante'] = $_POST['solicitante'];
+    $_SESSION['areaSolicitante'] =$_POST['cargos'];
+    $_SESSION['nomRecibe']=$_POST["recibe"];
+    $_SESSION['areaRecibe']=$_POST["cargor"];
     $result = mysqli_query($mysqli, "select idUsuario from usuario where nombre like '$solicitante' && puesto like '$cargos';");
     
     $row = mysqli_fetch_assoc($result);
@@ -20,6 +25,7 @@
     if($lastr==null){
         $lastr=1;
     }
+    $_SESSION['idValSalida']= $lastr;
     $lastr+=1;
     $fecha = date("Y-m-d");
     $query = "INSERT INTO valesalida VALUES ($lastr,'$fecha','$are','$solicitante','ING. ARMANDO PICHARDO IBARRA','$recibe','$cargos','ENCARGADO DE LA DIR. COORD.','$cargor');";

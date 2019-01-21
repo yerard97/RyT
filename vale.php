@@ -114,7 +114,7 @@ $var = $_SESSION['idvalsal'];
             </div>
                 </form> 
                 
-                  <form action="Pag/resguardoMovEqui.php" method="post" class="btn">
+                  <form action="Pag/valeSalida.php" method="post" class="btn">
                       <input type="submit" value="Generar" id="boton1">
                       
                   </form> 
