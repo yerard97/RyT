@@ -15,7 +15,7 @@ $cantidade=$_POST["cantidade"];
 echo "<!doctype html>
             <html>
             <head>
-                <title>Administración</title>
+                <title>Almacén</title>
                 <script src='../lib/sweetalert.min.js'></script>
                 <link rel='stylesheet' type='text/css' href='../lib/sweetalert.css'>
                 
@@ -25,15 +25,16 @@ echo "<!doctype html>
 //$busqueda=mysql_query($mysqli,"SELECT NoPartida from detallevs where NoPartida= $partida");
 if($busqueda = mysqli_query($mysqli,"SELECT NoPartida FROM detallevs WHERE NoPartida='$partida';"))
 {
-        $rows_count=$busqueda->num_rows;
+
+$rows_count=$busqueda->num_rows;
         if ($rows_count>0){
 
-                echo " 
-    <script type='text/javascript'>
-   swal('Producto ya Insertado');
-    setTimeout(function(){ location.href ='../vale.php';}, 10000); 
-    </script>";
-        
+              echo " 
+            <script type='text/javascript'>
+            
+            swal('Número de Partida ya usado');
+            setTimeout(function(){ location.href ='../vale.php';}, 500); 
+            </script>";
         
         }else{
         
@@ -41,10 +42,11 @@ if($busqueda = mysqli_query($mysqli,"SELECT NoPartida FROM detallevs WHERE NoPar
                 ($var,1,'$partida',$cantidad,'$unidad','$descripcion',$cantidade);";
                 $resultado=mysqli_query($mysqli,$insertar);
                 echo " 
-                <script type='text/javascript'>
-                swal('Producto insertado Correctamente');
-                setTimeout(function(){ location.href ='../vale.php';}, 1000); 
-                </script>";
+            <script type='text/javascript'>
+            
+            swal('Agregado Correctamente');
+            setTimeout(function(){ location.href ='../vale.php';}, 500); 
+            </script>";
                
         }
 
@@ -55,10 +57,6 @@ if($busqueda = mysqli_query($mysqli,"SELECT NoPartida FROM detallevs WHERE NoPar
 
 
 mysqli_close($mysqli);
-
-echo "<script type='text/javascript'>
-       location.href='../vale.php'
-        </script>"
 
 
 ?>
