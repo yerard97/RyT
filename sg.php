@@ -98,18 +98,51 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         
             const {value:url} =  await Swal({
                title:"Llena sólo los campos a editar",
-               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Descripción" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Área Asignada" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Responsable" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Status" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Serie" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Color" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Material" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Marca" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Modelo" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Factura" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Origen de Producto" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="IVA" required>',
+                html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label>                       <input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+
+                '<label style="font-family:cursive;">Campos a editar:</label>'+'<br/>'+
+                '<input id="val0" placeholder="Número de Inventario">'+'<br/>'+'<br/>'+
+                '<input id="val2" placeholder="Nombre del Producto">'+'<br/>'+'<br/>'+
+                '<input id="val3" placeholder="Descripción">'+'<br/>'+'<br/>'+
+                '<input id="val4" placeholder="Factura">'+'<br/>'+'<br/>'+
+                '<input id="val5" placeholder="Responsable">'+'<br/>'+'<br/>'+
+                '<input id="val6" placeholder="Costo con IVA">'+'<br/>'+'<br/>'+
+                '<input id="val7" placeholder="Costo sin IVA">'+'<br/>'+'<br/>'+
+                '<input id="val8" placeholder="Status">'+'<br/>'+'<br/>'+
+                '<input id="val9" placeholder="Serie">'+'<br/>'+'<br/>'+
+                '<input id="val10" placeholder="Observaciones">'+'<br/>'+'<br/>'+
+                '<input id="val11" placeholder="Color">'+'<br/>'+'<br/>'+
+                '<input id="val12" placeholder="Material">'+'<br/>'+'<br/>'+
+                '<input id="val13" placeholder="Marca">'+'<br/>'+'<br/>'+
+                '<input id="val14" placeholder="Modelo">'+'<br/>'+'<br/>'+
+                '<input id="val15" placeholder="Forma de Compra">'+'<br/>'+'<br/>'+
+                '<input id="val16" placeholder="IVA">',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
                                 document.getElementById('val1').value,
-                                document.getElementById('val2').value
+                                
+                                document.getElementById('val2').value,
+                                document.getElementById('val3').value,
+                                document.getElementById('val4').value,
+                                document.getElementById('val5').value,
+                                document.getElementById('val6').value,
+                                document.getElementById('val7').value,
+                                document.getElementById('val8').value,
+                                document.getElementById('val9').value,
+                                document.getElementById('val10').value,
+                                document.getElementById('val11').value,
+                                document.getElementById('val12').value,
+                                document.getElementById('val13').value,
+                                document.getElementById('val14').value,
+                                document.getElementById('val15').value,
+                                document.getElementById('val16').value,  
+                                document.getElementById('val0').value
                             ]
                             }
             })
 
             if (url) {
-                location.href ='php/eliminarSC.php?variable1='.concat(url);
+                location.href ='php/editarSG.php?variable1='.concat(url);
   }
      }
     
@@ -130,7 +163,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
             })
 
             if (url) {
-                location.href ='php/eliminarSC.php?variable1='.concat(url);
+                location.href ='php/eliminarSG.php?variable1='.concat(url);
   }
      }
     
@@ -214,7 +247,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                      </tr>
                  </thead> 
                   <?php
-                   $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario";
+                   $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
                    $result=mysqli_query($mysqli,$sql);
                     
                    while($mostrar=mysqli_fetch_array($result)){

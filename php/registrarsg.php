@@ -57,7 +57,17 @@ $insertar="INSERT INTO mobiliarioyequipo VALUES ($lastr,$row,'$noinv','$descripc
 
 
 if ($mysqli->query($insertar)){
-    
+    	echo " 
+            <script type='text/javascript'>
+            swal('Agregado Correctamente');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+}else{
+    echo " 
+            <script type='text/javascript'>
+            swal('No se agrego correctamente');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
 }
 
 mysqli_close($mysqli);
