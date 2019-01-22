@@ -39,5 +39,6 @@ if($mysqli){
             swal('Eliminado Correctamente');
             setTimeout(function(){ location.href ='../solicitud.php';}, 1000); 
             </script>";
-}}
+}
+}
 ?>

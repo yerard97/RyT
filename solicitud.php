@@ -60,6 +60,9 @@ $var = $_SESSION['idsolcomp'];
     
     </script>
 <body>
+    
+
+   
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
         <input type="checkbox" id="check">
@@ -129,6 +132,18 @@ $var = $_SESSION['idsolcomp'];
                      <td><?php echo $mostrar['dscNombre']?></td>
                      <td><?php echo $mostrar['dscDescripcion']?></td>
                      <td><?php echo $mostrar['dscCantidad']?></td>
+                     <td>
+                     <form action="php/deletesc.php" method="post" name="form">
+                        <input type="hidden" name="nombre" value="<?php echo $mostrar['dscNombre']; ?>"/>
+                        <input type="submit" value="Borrar" style="background-color:red;color:white;" />
+                        </form>
+
+
+                    </td>
+                     
+                     
+                   
+
                  </tr>
                     <?php
                    }
@@ -141,6 +156,7 @@ $var = $_SESSION['idsolcomp'];
            
          </form>    
     </main>
+    
     
 </body>
 </html>
