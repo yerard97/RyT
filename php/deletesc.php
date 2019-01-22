@@ -25,7 +25,8 @@ echo "<!doctype html>
 if(mysqli_fetch_assoc ($result) == null){
     echo " 
     <script type='text/javascript'>
-   swal('Producto no encontrado');
+   //   swal('Producto no encontrado');
+   alert('te la mcomes');
     setTimeout(function(){ location.href ='../solicitud.php';}, 1000); 
     </script>";
        

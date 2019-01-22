@@ -117,6 +117,7 @@ $var = $_SESSION['idsolcomp'];
                          <th>PRODUCTO</th>
                          <th>DESCRIPCIÓN</th>
                          <th>CANTIDAD</th>
+                         <th>ACCION</th>
                      </tr>
                  </thead> 
                  
@@ -140,9 +141,6 @@ $var = $_SESSION['idsolcomp'];
 
 
                     </td>
-                     
-                     
-                   
 
                  </tr>
                     <?php

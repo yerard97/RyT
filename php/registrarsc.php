@@ -10,6 +10,9 @@ $producto=$_POST["producto"];
 $descripcion=$_POST["descripcion"];
 $cantidad=$_POST["cantidad"];
 $var = $_SESSION['idsolcomp'];
+
+$busqueda=mysql_query("SELECT NoPartida from detallevs where NoPartida= $var");
+
 //echo $var;
 $insertar="INSERT INTO detallesc (dscsolicitudCompra,dscCantidad,dscDescripcion,dscNombre) VALUES ('$var','$cantidad','$descripcion','$producto')";
 
