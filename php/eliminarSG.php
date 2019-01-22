@@ -19,7 +19,7 @@ echo "<!doctype html>
             </head>
                 </html>";
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
-$result = mysqli_query($mysqli, "select `No.Inv.`,Serie from mobiliarioyequipo where `No.Inv.`=$variable1;");
+$result = mysqli_query($mysqli, "select `No.Inv.`,Serie from mobiliarioyequipo where `No.Inv.`=$variable1 && Serie='$variable2';");
 //echo mysqli_fetch_assoc ($result);
 if(mysqli_fetch_assoc ($result) == null){
         echo " 

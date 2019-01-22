@@ -3,6 +3,15 @@ main{
     top: 60px;
 }
 
+.titulo h1{
+    padding: 25px;
+    color:#118327;
+    font-style:oblique;
+    font-family: cursive;
+    text-align: center;
+    font-size: 55px;
+}
+
 .menu li a:hover{
     color: white;
 }
@@ -12,29 +21,36 @@ main{
 .menu li a.login2:hover{
     color:#e30707;
 }
-.titulo{
-      position:fixed;
+
+.logo{
+   text-align: center;
     width: 100%;
 }
-.titulo h1{
-     padding: 50px;
-    color:#118327;
-    font-style:oblique;
-    font-family: cursive;
+
+.logo img{
+    width: 40%;
+    margin-top: -38px;
+}
+
+.inicio{
+  margin-top: -50px;
+}
+
+.inicio h1{
     text-align: center;
-    font-size: 55px;
+    font-family:cursive;
+    font-size: 40px;
+    margin-left: 50px;
 }
-
 .text{
-    padding: 200px;
-    display: flex;
+    width: 100%;
+    padding: 20px;
     justify-content: center;
+    display: flex;
+    font-size: 14.5px;
 }
-
-.text1{
-    margin-top: -140px;
-    display: flex;
-    justify-content: center;
+.t2{
+    white-space:pre-wrap;
 }
 
 #boton{
@@ -49,22 +65,36 @@ main{
     font-size: 16px;
     cursor: pointer;
     width: 80px;
-    margin-top: 80px;
     margin-left: 47%;
     
 }
+
+@media screen and (max-width:800px){
+    .inicio h1{
+        padding: 30px;
+        margin-bottom: -50px;
+    }
+    .logo img{
+     width:300px;   
+    }
+}
+
 @media screen and (max-width:600px){
     .titulo h1{
         font-size: 40px;
         padding-bottom:30px;
+    }
+    .inicio h1{
+        font-size: 25px;
+        margin-bottom: -170px;      
     }
 
     header h2{
     padding: 7px;
     font-size: 20px;
     }
-
 }
+
 
 
 @media screen and (max-width:900px){
@@ -100,9 +130,4 @@ main{
         display: block;
     }
 }
-
-
-
-   
-
 

@@ -45,13 +45,13 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         
             const {value:url} =  await Swal({
                title:"Inserta las propiedades del nuevo producto",
-               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+
+               html:'<input id="val1" placeholder="No. Inv. (Sólo Número)" required>'+'<br/>'+'<br/>'+
                 '<input id="val2" placeholder="Nombre del Producto" required>'+'<br/>'+'<br/>'+
                 '<input id="val3" placeholder="Descripción" required>'+'<br/>'+'<br/>'+
-                '<input id="val4" placeholder="Factura" required>'+'<br/>'+'<br/>'+
+                '<input id="val4" placeholder="Factura (Sólo Número)" required>'+'<br/>'+'<br/>'+
                 '<input id="val5" placeholder="Responsable" required>'+'<br/>'+'<br/>'+
-                '<input id="val6" placeholder="Costo con IVA" required>'+'<br/>'+'<br/>'+
-                '<input id="val7" placeholder="Costo sin IVA" required>'+'<br/>'+'<br/>'+
+                '<input id="val6" placeholder="Costo c/IVA (Sólo Número)" required>'+'<br/>'+'<br/>'+
+                '<input id="val7" placeholder="Costo s/IVA (Sólo Número)" required>'+'<br/>'+'<br/>'+
                 '<input id="val8" placeholder="Status" required>'+'<br/>'+'<br/>'+
                 '<input id="val9" placeholder="Serie" required>'+'<br/>'+'<br/>'+
                 '<input id="val10" placeholder="Observaciones" required>'+'<br/>'+'<br/>'+
@@ -60,7 +60,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                 '<input id="val13" placeholder="Marca" required>'+'<br/>'+'<br/>'+
                 '<input id="val14" placeholder="Modelo" required>'+'<br/>'+'<br/>'+
                 '<input id="val15" placeholder="Forma de Compra" required>'+'<br/>'+'<br/>'+
-                '<input id="val16" placeholder="IVA" required>',
+                '<input id="val16" placeholder="IVA(Sólo Número)" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -98,15 +98,15 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         
             const {value:url} =  await Swal({
                title:"Llena sólo los campos a editar",
-                html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label>                       <input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+
+                html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label>                       <input id="val1" placeholder="No. Inv. (Sólo Número)" required>'+'<br/>'+'<br/>'+
                 '<label style="font-family:cursive;">Campos a editar:</label>'+'<br/>'+
-                '<input id="val0" placeholder="Número de Inventario">'+'<br/>'+'<br/>'+
+                '<input id="val0" placeholder="No. Inv. (Sólo Número)">'+'<br/>'+'<br/>'+
                 '<input id="val2" placeholder="Nombre del Producto">'+'<br/>'+'<br/>'+
                 '<input id="val3" placeholder="Descripción">'+'<br/>'+'<br/>'+
-                '<input id="val4" placeholder="Factura">'+'<br/>'+'<br/>'+
+                '<input id="val4" placeholder="Factura (Sólo Número)">'+'<br/>'+'<br/>'+
                 '<input id="val5" placeholder="Responsable">'+'<br/>'+'<br/>'+
-                '<input id="val6" placeholder="Costo con IVA">'+'<br/>'+'<br/>'+
-                '<input id="val7" placeholder="Costo sin IVA">'+'<br/>'+'<br/>'+
+                '<input id="val6" placeholder="Costo c/IVA (Sólo Número)">'+'<br/>'+'<br/>'+
+                '<input id="val7" placeholder="Costo s/IVA (Sólo Número)">'+'<br/>'+'<br/>'+
                 '<input id="val8" placeholder="Status">'+'<br/>'+'<br/>'+
                 '<input id="val9" placeholder="Serie">'+'<br/>'+'<br/>'+
                 '<input id="val10" placeholder="Observaciones">'+'<br/>'+'<br/>'+
@@ -115,7 +115,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                 '<input id="val13" placeholder="Marca">'+'<br/>'+'<br/>'+
                 '<input id="val14" placeholder="Modelo">'+'<br/>'+'<br/>'+
                 '<input id="val15" placeholder="Forma de Compra">'+'<br/>'+'<br/>'+
-                '<input id="val16" placeholder="IVA">',
+                '<input id="val16" placeholder="IVA (Sólo Número)">',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -152,7 +152,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         
             const {value:url} =  await Swal({
                title:"Escribe los identificadores del producto",
-               html:'<input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Serie" required>',
+               html:'<input id="val1" placeholder="No. Inv. (Sólo Número)" required>'+'<br/>'+'<br/>'+'<input id="val2" placeholder="Número de Serie" required>',
                 focusConfirm:false,
                 preConfirm:()=>{
                             return[
@@ -176,7 +176,6 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     
         <nav class="menu">
             <ul>
-              <li><a href="index.html">Inicio</a></li>
               <li><a href="php/logout.php" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
