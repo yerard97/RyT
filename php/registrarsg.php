@@ -53,26 +53,40 @@ $row=$row['idUsuario'];
 
 
 
-$insertar="INSERT INTO mobiliarioyequipo VALUES ($lastr,$row,'$noinv','$descripcion','$color','$material','$marca','$modelo','$serie','$nombre','$status','$factura','$formac','',$costoc,$costos,'2050-01-21','$obser',$iva,null)";
 
+if($busqueda = mysqli_query($mysqli,"SELECT `No.Inv.` FROM mobiliarioyequipo WHERE `No.Inv.` ='$noinv';"))
+{
 
-if ($mysqli->query($insertar)){
-    	echo " 
+$rows_count=$busqueda->num_rows;
+        if ($rows_count>0){
+
+              echo " 
+            <script type='text/javascript'>
+            
+            swal('Número de inventario repetido');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+        
+        }else{
+        
+            $insertar="INSERT INTO mobiliarioyequipo VALUES ($lastr,$row,'$noinv','$descripcion','$color',
+            '$material','$marca','$modelo','$serie','$nombre','$status','$factura','$formac','',$costoc,$costos,'2050-01-21','$obser',$iva,null)";
+
+                    $resultado=mysqli_query($mysqli,$insertar);
+                echo " 
             <script type='text/javascript'>
             swal('Agregado Correctamente');
             setTimeout(function(){ location.href ='../sg.php';}, 500); 
             </script>";
+               
+        }
+
+
 }else{
-    echo " 
-            <script type='text/javascript'>
-            swal('No se agrego correctamente');
-            setTimeout(function(){ location.href ='../sg.php';}, 500); 
-            </script>";
+
 }
 
-mysqli_close($mysqli);
-/*echo "<script type='text/javascript'>
-       location.href='../sg.php'
-        </script>"
 
-?>*/
+mysqli_close($mysqli);
+
+?>
