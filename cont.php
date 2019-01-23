@@ -71,7 +71,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
              <button id="rep1" style="">Buscar</button>
          </div>
          <div class=repo>
-         <a href="cont-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
+         <a href="cont-rep.php"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          
          </div>
         

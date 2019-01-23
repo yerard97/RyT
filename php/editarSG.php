@@ -47,6 +47,23 @@ if ($row['No.Inv.']==$noinv){
     
 $cont=0;
 $cont1=0;
+    
+
+if($busqueda = mysqli_query($mysqli,"SELECT `No.Inv.` FROM mobiliarioyequipo WHERE `No.Inv.` ='$noinv';"))
+{
+
+$rows_count=$busqueda->num_rows;
+        if ($rows_count>0){
+
+              echo " 
+            <script type='text/javascript'>
+            
+            swal('Número de inventario repetido');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+        
+        }else{    
+    
 if ($nombre!=null){
     if($mysqli->query("UPDATE mobiliarioyequipo SET Tipo='$nombre' WHERE `No.Inv.`='$noinv';")){
         $cont=$cont+1;
@@ -182,7 +199,7 @@ if($cont>0){
             </script>";
 }   
 
-}
+} }
 else
 {
     echo " 
@@ -190,7 +207,7 @@ else
             swal('¡Número de Inventario No Existe!');
             setTimeout(function(){ location.href ='../sg.php';}, 1000); 
             </script>";
-}
+}}
 mysqli_close($mysqli);
 /*echo "<script type='text/javascript'>
        location.href='../sg.php'
