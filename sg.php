@@ -5,6 +5,7 @@ include_once "php/dbconfig.php";
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
+//$valorCaja=$_POST['caja1'];
 
 ?>
 
@@ -21,6 +22,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
 </head>
 <script type="text/javascript">
+  
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
         document.getElementById("tabla").style.display ="none";
@@ -39,6 +41,20 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                 Ocultar();
                  document.getElementById("boton").value="Mostrar";
             }
+        }
+        function obtenValor(){
+        document.getElementById('list').value;
+            alert(window.location);
+            location.href ='index.html';
+                        
+            //document.getElementById('list').innerHTML = document.getElementById('list').value+"3";
+            //setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            alert(document.getElementById('list').value);
+            //var dire=window.location;
+            //alert(dire+",valor="+valor);
+            //alert(dir.concat(",valor="+valor);
+            
+        
         }
     
     async function inserta(){
@@ -167,7 +183,8 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
   }
      }
     
-</script>
+
+    </script>
 <body>
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
@@ -187,17 +204,22 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         <div class="titulo">
             <h1>Artículos</h1>
         </div>
-         
+        
          <div class="buscar">
-                 <h4 >Buscar:</h4>
+             <h4 >Buscar:</h4>
+                 <form method="POST">
+                 
                  <select name="lista" id="list" style="cursor: pointer;">
                  <option value="inventario">No. Inventario</option>
                  <option value="factura">Factura</option>
                  <option value="serie">Serie</option>
+                <option value="todo">Mostrar Todos</option>
              </select>
-             <input type="text" placeholder="Escribe el número" id="caja1">
-             <button id="rep1" >Buscar</button>
+             <input type="text" placeholder="Escribe el número" id="caja1" name="cajita">
+             <button id="rep1" name="buscar" type="submit">Buscar</button>
+                </form>   
          </div>
+              
          <div class=repo>
          <a href="inf-rep.html"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
          </div>
@@ -246,14 +268,35 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                      </tr>
                  </thead> 
                   <?php
-                   $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
+                        $var = "asdasdsa";
+                        $valorCaja=0;
+                        if(isset($_GET['lista'])){
+                            $var= $_GET['lista'];
+                            
+                        }
+                    
+                        //echo "sadasdasd",$_POST['cajaita'];
+                        // echo $var;
+
+                        if($var=="inventario"){
+                        $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `No.Inv.`='$valorCaja'ORDER BY `No.Inv.`;";
+                        }else if($var=="factura"){
+                           $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `idFactura`='123' ORDER BY `No.Inv.`;";
+                        }else if($var=="serie"){
+                           
+                            $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `Serie`='1111' ORDER BY `No.Inv.`;";
+                        }else{
+                            $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
+                        }
                    $result=mysqli_query($mysqli,$sql);
+
                     
                    while($mostrar=mysqli_fetch_array($result)){
-                     ?>  
+                     ?> 
                    
-                 <tr>
-                     <td><?php echo $mostrar['No.Inv.']?></td>
+                  <tr >;
+                      
+                     <td ><?php echo $mostrar['No.Inv.']?></td>
                      <td><?php echo $mostrar['Tipo']?></td>
                      <td><?php echo $mostrar['Descripcion']?></td>
                      <td><?php echo $mostrar['dNombre']?></td>
@@ -308,8 +351,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                    }
                      ?>
              </table>
-             
-         </div>             
+                        
          </div>
     </main>
 </body>

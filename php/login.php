@@ -1,6 +1,7 @@
 <?php
 include_once "dbconfig.php";
 
+
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
@@ -30,7 +31,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
             
             
 		session_start();
-        
+        $_SESSION['variableTTabla']=0;
         $_SESSION['user'] = $user;					
 		//print_r($lugar);
      echo "       <!doctype html>
