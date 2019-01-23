@@ -18,6 +18,8 @@ $pdf->SetXY(68, 21);
 $pdf->Cell(50,4,utf8_decode('DEPARTAMENTO DE SERVICIOS GENERALES'));
 
 
+
+
 $varareadripcio=$_POST['aread'];
 $usuario=$_POST['res'];
 
@@ -25,11 +27,14 @@ $usuario=$_POST['res'];
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $mysqli->set_charset("utf8");
 if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
-
-$result = mysqli_query($mysqli, "SELECT `No.Inv.`,Descripcion, Color, Material, Marca, Modelo, Serie from mobiliarioyequipo,usuario 
-where mobiliarioyequipo.idUsuario=usuario.idUsuario && Puesto='Director Informatica';");
 $cargo=mysqli_query($mysqli,"SELECT Puesto, Nombre FROM `usuario` where Nombre LIKE '$usuario';");
 $car=mysqli_fetch_assoc($cargo);
+$puesto=$car['Puesto'];
+$result = mysqli_query($mysqli, "SELECT `No.Inv.`,Descripcion, Color, 
+Material, Marca, Modelo, Serie from mobiliarioyequipo,usuario 
+where mobiliarioyequipo.idUsuario=usuario.idUsuario && Puesto='$puesto';");
+
+
 
 $vartemp=78;
 $noCol= mysqli_num_rows ($result);
