@@ -42,7 +42,7 @@ $cont=1;
 while($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $var=array($row1['No.Inv.'],$row1['Descripcion'],$row1['Color'],$row1['Material'],$row1['Marca'],$row1['Modelo'],$row1['Serie']);
     $pdf->fsolcomt($var,$vartemp);
-    $vartemp=$vartemp+8;
+    $vartemp=$vartemp+4;
     /*if($cont==17){
         $pdf->AddPage();
         $pdf->fsolcomt($miCabecera,50);

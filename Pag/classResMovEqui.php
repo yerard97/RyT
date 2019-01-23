@@ -47,7 +47,7 @@ class classResMovEqui extends FPDF
         $this->SetXY(10, $val);
         $this->SetFont('Arial','B',8);
 
-        $this->Cell(19,4, utf8_decode($cabecera[0]),1, 0 , '' );
+        $this->Cell(19,4, utf8_decode($cabecera[0]),1, 0 , 'C' );
         $this->Cell(50,4, utf8_decode($cabecera[1]),1, 0 , 'C' );
         $this->Cell(25,4, utf8_decode($cabecera[2]),1, 0 , 'C' );
         $this->Cell(18,4, utf8_decode($cabecera[3]),1, 0 , 'C' );
