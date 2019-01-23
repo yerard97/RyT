@@ -47,22 +47,7 @@ if ($row['No.Inv.']==$noinv){
     
 $cont=0;
 $cont1=0;
-    
-
-if($busqueda = mysqli_query($mysqli,"SELECT `No.Inv.` FROM mobiliarioyequipo WHERE `No.Inv.` ='$noinv';"))
-{
-
-$rows_count=$busqueda->num_rows;
-        if ($rows_count>0){
-
-              echo " 
-            <script type='text/javascript'>
-            
-            swal('Número de inventario repetido');
-            setTimeout(function(){ location.href ='../sg.php';}, 500); 
-            </script>";
-        
-        }else{    
+$cont2=0;
     
 if ($nombre!=null){
     if($mysqli->query("UPDATE mobiliarioyequipo SET Tipo='$nombre' WHERE `No.Inv.`='$noinv';")){
@@ -173,12 +158,22 @@ if ($iva!=null){
     }
 }
 if ($inv!=null){
+    if($busqueda = mysqli_query($mysqli,"SELECT `No.Inv.` FROM mobiliarioyequipo WHERE `No.Inv.` ='$inv';"))
+        {
+        $rows_count=$busqueda->num_rows;
+    if ($rows_count>0){
+        $cont2=$cont2+1;
+        }else
     if($mysqli->query("UPDATE mobiliarioyequipo SET `No.Inv.`='$inv' WHERE `No.Inv.`='$noinv';")){
         $cont=$cont+1;
     }else{
         $cont1=$cont1+1;
     }
-}
+}}
+    
+    
+    
+    
 if($cont>0){
     echo " 
             <script type='text/javascript'>
@@ -191,7 +186,13 @@ if($cont>0){
             swal('Error en editar ciertos campos');
             setTimeout(function(){ location.href ='../sg.php';}, 500); 
             </script>";
-} else{
+} else if($cont2>0){
+    echo " 
+            <script type='text/javascript'>
+            swal('Número de Inventario Ya Existe');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+}else{
     echo " 
             <script type='text/javascript'>
             swal('¡No editaste ningún campo!');
@@ -199,7 +200,7 @@ if($cont>0){
             </script>";
 }   
 
-} }
+}
 else
 {
     echo " 
@@ -207,7 +208,7 @@ else
             swal('¡Número de Inventario No Existe!');
             setTimeout(function(){ location.href ='../sg.php';}, 1000); 
             </script>";
-}}
+}
 mysqli_close($mysqli);
 /*echo "<script type='text/javascript'>
        location.href='../sg.php'
