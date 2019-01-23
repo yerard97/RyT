@@ -23,7 +23,7 @@ $var = $_SESSION['idsolcomp'];
 </head>
 <script type="text/javascript">
     
-     async function eliminar(){
+     /*async function eliminar(){
         
             const {value:url} =  await Swal({
                title:"Nombre y descripción del producto a eliminar",
@@ -56,7 +56,7 @@ $var = $_SESSION['idsolcomp'];
          
         
          
-     }
+     }*/
     
     </script>
 <body>
@@ -107,7 +107,7 @@ $var = $_SESSION['idsolcomp'];
                   </form> 
                   <div class="nuevo">
                    <a href="adm.php"><input type="submit" value="Realizar nueva solicitud" id="boton2"></a>
-                     <input type="submit" value="Eliminar" id="boton10" onclick="eliminar()">
+                     <!--<input type="submit" value="Eliminar" id="boton10" onclick="eliminar()">-->
                    </div>
                  <div class="tabla">
                      <table>
@@ -135,7 +135,7 @@ $var = $_SESSION['idsolcomp'];
                      <td>
                      <form action="php/deletesc.php" method="post" name="form">
                         <input type="hidden" name="nombre" value="<?php echo $mostrar['dscNombre']; ?>"/>
-                        <input type="submit" value="Borrar" style="background-color:red;color:white;" />
+                        <input type="submit" value="Borrar" style="background-color:red;color:white; border-radius:10px;width:50px; height:30px; font-size:14px;font-weight:bold; cursor:pointer;" />
                         </form>
 
 
