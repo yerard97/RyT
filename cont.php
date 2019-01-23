@@ -1,3 +1,13 @@
+<?php
+session_start();
+include_once "php/dbconfig.php";
+
+$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+$mysqli->set_charset("utf8");
+if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,112 +90,74 @@
                          <th>RESPONSABLE</th>
                          <th>COSTO c/IVA</th>
                          <th>COSTO s/IVA</th>
-                         <th>FECHA COMPRA</th>
+                         <th>STATUS</th>
                          <th>SERIE</th>
                          <th>OBSERVACIONES</th>
                          
                      </tr>
                  </thead> 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
+                  <?php
+                   $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
+                   $result=mysqli_query($mysqli,$sql);
                     
-                 </tr>
-                 
+                   while($mostrar=mysqli_fetch_array($result)){
+                     ?>  
+                   
                  <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
-                    
+                     <td><?php echo $mostrar['No.Inv.']?></td>
+                     <td><?php echo $mostrar['Tipo']?></td>
+                     <td><?php echo $mostrar['Descripcion']?></td>
+                     <td><?php echo $mostrar['dNombre']?></td>
+                     <td><?php echo $mostrar['idFactura']?></td>
+                     <td><?php echo $mostrar['Nombre']?></td>
+                     <td><?php echo $mostrar['CostoCIVA']?></td>
+                     <td><?php echo $mostrar['CostoSIVA']?></td>
+                     <td><?php echo $mostrar['Status']?></td>
+                     <td><?php echo $mostrar['Serie']?></td>
+                     <td><?php echo $mostrar['Observaciones']?></td>
                  </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     <td>Ocho</td>
-                     <td>Nueve</td>
-                     <td>Diez</td>
-                     <td>Once</td>
-                 
-                 </tr>
+                    <?php
+                   }
+                     ?>
              </table>    
              </div>
-                <div id="oculto" style="display: none">
+               
+               
+                <div id="oculto" style="display:none">
                 <table>
                  <thead>
                      <tr style="background: #118327;" id="tab2">
-                      <th>No. INV.</th>   
+                     <th id="oculto1">No.Inv.</th>    
                      <th id="oculto1">COLOR</th>
                      <th id="oculto1">MATERIAL</th>
                       <th id="oculto1" class="t2">MARCA</th>
                         <th id="oculto1" class="t2">MODELO</th>
-                         <th>FORMA COMPRA</th>
-                         <th id="oculto1" class="t2">STATUS PRODUCTO</th>
-                        
-                         <th id="oculto1" class="t2">ORIGEN</th>
+                         <th id="oculto1" class="t2">FORMA COMPRA</th>
+                         <th id="oculto1" class="t2">ÁREA DE ORIGEN</th>
                          <th id="oculto1" class="t2">IVA</th>
                          </tr>
                          </thead>
-                         <tr>
-                     <td>Uno</td>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatigivieivevcgeingeefhpeifiqeugfcneipmugcuegicunmro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     
-                     
-                 </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
-                     
-                     
-                 </tr>
-                 
-                 <tr>
-                     <td>Uno</td>
-                     <td>Uno</td>
-                     <td>Dos</td>
-                     <td>Tres</td>
-                     <td>Cuatro</td>
-                     <td>Cinco</td>
-                     <td>Seis</td>
-                     <td>Siete</td>
+                        <?php
+                  
+                   $result=mysqli_query($mysqli,$sql);
                     
+                   while($mostrar=mysqli_fetch_array($result)){
+                     ?>  
+                   
+                 <tr>
+                     <td><?php echo $mostrar['No.Inv.']?></td>
+                     <td><?php echo $mostrar['Color']?></td>
+                     <td><?php echo $mostrar['Material']?></td>
+                     <td><?php echo $mostrar['Marca']?></td>
+                     <td><?php echo $mostrar['Modelo']?></td>
+                     <td><?php echo $mostrar['FormaCompra']?></td>
+                     <td><?php echo $mostrar['Origen']?></td>
+                     <td><?php echo $mostrar['IVA']?></td>
                      
                  </tr>
+                    <?php
+                   }
+                     ?>
              </table>
              
          </div>             
