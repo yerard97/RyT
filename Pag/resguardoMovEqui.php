@@ -1,7 +1,10 @@
 <?php
 
 //require('fpdf/fpdf.php');
+include_once "../php/dbconfig.php";
 include_once('classResMovEqui.php');
+
+
 
 $pdf=new FPDF('P','mm','Letter');
 $pdf = new classResMovEqui();
@@ -14,23 +17,56 @@ $pdf->Cell(50,4,utf8_decode('DIRECCIÓN DE COORDINACIÓN FINANCIERA Y PLANEACIÓ
 $pdf->SetXY(68, 21);
 $pdf->Cell(50,4,utf8_decode('DEPARTAMENTO DE SERVICIOS GENERALES'));
 
+
+$varareadripcio=$_POST['aread'];
+$usuario=$_POST['res'];
+
+
+$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+$mysqli->set_charset("utf8");
+if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
+
+$result = mysqli_query($mysqli, "SELECT `No.Inv.`,Descripcion, Color, Material, Marca, Modelo, Serie from mobiliarioyequipo,usuario 
+where mobiliarioyequipo.idUsuario=usuario.idUsuario && Puesto='Director Informatica';");
+$cargo=mysqli_query($mysqli,"SELECT Puesto, Nombre FROM `usuario` where Nombre LIKE '$usuario';");
+$car=mysqli_fetch_assoc($cargo);
+
+$vartemp=78;
+$noCol= mysqli_num_rows ($result);
+$cont=1;
+while($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    $var=array($row1['No.Inv.'],$row1['Descripcion'],$row1['Color'],$row1['Material'],$row1['Marca'],$row1['Modelo'],$row1['Serie']);
+    $pdf->fsolcomt($var,$vartemp);
+    $vartemp=$vartemp+8;
+    /*if($cont==17){
+        $pdf->AddPage();
+        $pdf->fsolcomt($miCabecera,50);
+        $vartemp=58;
+    }else if($cont == 21){
+        //$pdf->AddPage();
+        //$pdf->fsolcomt($miCabecera,50);
+        //$vartemp=58;
+    }*/
+    $cont=$cont+1;
+}
+
  
 //Métodos llamados con el objeto $pdf
-$reg1 = array('DEPENDENCIA Y/O ORGANISMO','');
+$reg1 = array('DEPENDENCIA Y/O ORGANISMO','RADIO Y TELEVISION DE HIDALGO');
 $val=34;
 $pdf->tabla1($reg1,$val);
-$reg1 = array('ÁREA DE ADSCRIPCIÓN','');
+$reg1 = array('ÁREA DE ADSCRIPCIÓN',$varareadripcio);
 $pdf->tabla1($reg1,$val+4);
-$reg1 = array('USUARIO','');
+$reg1 = array('USUARIO',$car['Nombre']);
 $pdf->tabla1($reg1,$val+8);
-$reg1 = array('CARGO','');
+$reg1 = array('CARGO',$car['Puesto']);
 $pdf->tabla1($reg1,$val+12);
 
 $reg2 = array('FECHA DE');
 $pdf->tabla2($reg2,$val);
 $reg2 = array('ASIGNACIÓN');
 $pdf->tabla2($reg2,$val+4);
-$reg2 = array('');
+$reg2 = array(date('Y-m-d'));
 $pdf->tabla2($reg2,$val+8);
 $reg2 = array('RESGUARDO');
 $pdf->tabla2($reg2,$val+12);
@@ -42,9 +78,6 @@ $pdf->tabla2($reg2,$val+16);
 $pdf->SetXY(60,61);
 $pdf->Cell(20,4,utf8_decode('RESGUARDO INTERNO DE MOBILIARIO Y EQUIPO'));
 
-
-
- 
 //Títulos que llevará la cabecera
 $miCabecera = array('No. INV.', 'DESCRICPCIÓN', 'COLOR', 'MATERIAL', 'MARCA', 'MODELO', 'SERIE');
  
@@ -80,11 +113,17 @@ $pdf->Cell(50,4,utf8_decode('DIRECTOR DE COORDINACION'));
 $pdf->SetXY(90, 271);
 $pdf->Cell(50,4,utf8_decode('FINANCIERA Y PLANEACION'));
 $pdf->SetXY(166, 268);
-$pdf->Cell(50,4,utf8_decode('JEFE DE OFICINA'));
+$pdf->Cell(50,4,$car['Puesto']);
+$pdf->SetXY(166, 264);
+$pdf->Cell(50,4,$car['Nombre']);
+
+
 
 $pdf->Line(15, 260, 63, 260);
 $pdf->Line(83, 260, 133, 260);
 $pdf->Line(156, 260, 205, 260);
+
+
 $pdf->Output();
 
 
