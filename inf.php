@@ -70,7 +70,7 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         
             const {value:url} =  await Swal({
                title:"Llena sólo los campos a editar",
-               html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label>                        <input id="val1" placeholder="Número de Inventario" required>'+'<br/>'+'<br/>'+
+               html:'<label style="font-family:cursive;">Escribe el no. de inventario del producto: </label>                        <input id="val1" placeholder="No. Inv. (Sólo Número)" required>'+'<br/>'+'<br/>'+
                 '<label style="font-family:cursive;">Campos a editar:</label>'+'<br/>'+
                 '<input id="val2" placeholder="Status">'+'<br/>'+'<br/>'+
                 '<input id="val3" placeholder="Responsable">'+'<br/>'+'<br/>'+
@@ -101,7 +101,6 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     
         <nav class="menu">
             <ul>
-              <li><a href="index.html">Inicio</a></li>
               <li><a href="php/logout.php" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>

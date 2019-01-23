@@ -1,3 +1,7 @@
+<?php
+		session_start();
+        
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +10,7 @@
     <link rel="stylesheet" href="iconos/css/fontello.css">
     <link rel="stylesheet" href="iconos">
     <link rel="stylesheet" href="css/est-menu.css">
-    <link rel="stylesheet" href="css/est-baja.css">
+    <link rel="stylesheet" href="css/est-alm.css">
     <link rel="stylesheet" href="css/est-modal.css">
 </head>
 <body>
@@ -17,37 +21,53 @@
     
         <nav class="menu">
             <ul>
-              <li><a href="index.html">Inicio</a></li>
+
               <li><a href="php/logout.php" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
     </header>
     
-    <main >
-       
+    <main>
         <div class="titulo">
             <h1>Petición de Baja</h1>
         </div>
-        <form action="php/login.php" method="post" enctype="application/x-www-form-urlencoded">    
-         <div class="text">
+        <form action="baja.html" method="post" enctype="application/x-www-form-urlencoded">
+          
+      <div class="text">
+          <div class="t1">
+           <br/><h3 style="text-align: center;">Área del solicitante:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Solicitante:</h3>
+            <br/><br/>
+           <h3 style="text-align: center;">Cargo del que solicita:</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Recibe</h3>
+           <br/><br/>
+           <h3 style="text-align: center;">Cargo del que recibe:</h3>
+            </div>     
+             <div class="t2">   
+                <input type="text" name="areas" placeholder="Escribe algo..." style="height: 20px;" required>
+               
+               
+                <input type="text" name="solicitante" placeholder="Escribe algo..." required>
                 
-                 <h3 style="text-align: center;">Área de Adscripción:</h3>&nbsp &nbsp &nbsp
-                
-                 <input type="text" name="aread" placeholder="Localidad Asignada"  >
-                 
-         </div>        
-         
-            <div class="text1">
-             <h3 style="text-align: center;">Responsable:</h3>&nbsp &nbsp &nbsp 
-            
-             <input type="text" name="res" placeholder="Responsable de Artículos" >
-             
-             </div>
-             
-             <a href="Pag/resguardoMovEqui.php"><input type="submit" value="Generar" id="boton"></a>
+                                              
+                <input type="text" name="cargos" placeholder="Escribe algo..." required>
 
-         </form>
+                                              
+                <input type="text" name="recibe" placeholder="Escribe algo..." required>
+                
+                                              
+                <input type="text" name="cargor" placeholder="Escribe algo..." required>
+            </div>
+                 
+             
+         </div> 
+          
+           <input type="submit" value="Generar" id="boton">
            
+         </form>    
     </main>
+    
 </body>
 </html>

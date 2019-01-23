@@ -70,7 +70,6 @@ $var = $_SESSION['idsolcomp'];
     
         <nav class="menu">
             <ul>
-              <li><a href="index.html">Inicio</a></li>
               <li><a href="php/logout.php" class="login2">Cerrar Sesión</a></li>
             </ul>
         </nav>
