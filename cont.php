@@ -41,6 +41,93 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         }
     
 </script>
+<script>
+                    function filtroinvetario() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtro");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+                    function filtroinvetariomostrar() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtroidmostrar");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("oculto");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+
+                    function filtroserie() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtrose");
+                    filter = input.value;
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[9];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+                    function filtrofactura() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtrofac");
+                    filter = input.value;
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[4];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+</script>
 <body>
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
@@ -61,14 +148,10 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         </div>
          
          <div class="buscar">
-                 <h4 >Buscar:</h4>
-                 <select name="lista" id="list" style="cursor: pointer;">
-                 <option value="inventario">No. Inventario</option>
-                 <option value="factura">Factura</option>
-                 <option value="serie">Serie</option>
-             </select>
-             <input type="text" placeholder="Escribe el número" id="caja1">
-             <button id="rep1" style="">Buscar</button>
+         <input type="text" id="filtro" onkeyup="filtroinvetario()" placeholder="Buscar por Numero de inventario">
+         <input type="text" id="filtrose" onkeyup="filtroserie()" placeholder="Buscar por numero de serie">
+         <input type="text" id="filtrofac" onkeyup="filtrofactura()" placeholder="Buscar por factura">
+         <input type="text" id="filtroidmostrar" onkeyup="filtroinvetariomostrar()" placeholder="Buscar por numero de inventario" style="display:none;">
          </div>
          <div class=repo>
          <a href="cont-rep.php"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>

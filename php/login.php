@@ -56,7 +56,7 @@ $hash = password_hash($row['password'],PASSWORD_DEFAULT);
         }else if(val.trim()==='INF'){
                  setTimeout(function(){  location.href ='../inf.php';}, 1000);
         }else if(val.trim()==='CONT'){
-                 setTimeout(function(){  location.href ='../cont.html';}, 1000);
+                 setTimeout(function(){  location.href ='../cont.php';}, 1000);
         }else if(val.trim()==='ADM'){
                  setTimeout(function(){  location.href ='../adm.php';}, 1000);
         }else if(val.trim()==='ALM'){
