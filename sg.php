@@ -26,10 +26,20 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
         document.getElementById("tabla").style.display ="none";
+        document.getElementById("filtro").style.display ="none";
+        document.getElementById("filtrose").style.display ="none";
+        document.getElementById("filtrofac").style.display ="none";
+
+        document.getElementById("filtroidmostrar").style.display ="Block";
+
         }
         function Ocultar(){
      document.getElementById("oculto").style.display ="none";
             document.getElementById("tabla").style.display ="block";
+            document.getElementById("filtro").style.display ="block";
+        document.getElementById("filtrose").style.display ="block";
+        document.getElementById("filtrofac").style.display ="block";
+        document.getElementById("filtroidmostrar").style.display ="none";
         }
         function Mostrar_Ocultar(){
             var oculto=document.getElementById("oculto");
@@ -185,6 +195,93 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     
 
     </script>
+     <script>
+                    function filtroinvetario() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtro");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+                    function filtroinvetariomostrar() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtroidmostrar");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("oculto");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+
+                    function filtroserie() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtrose");
+                    filter = input.value;
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[9];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+                    function filtrofactura() {
+                    
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("filtrofac");
+                    filter = input.value;
+                    table = document.getElementById("tabla");
+                    tr = table.getElementsByTagName("tr");
+
+                    
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[4];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+</script>
 <body>
     <header>
       <img src="imagenes/lg.png" class="img-logoeh" style="width: 80px; margin-top: 7px;">
@@ -206,18 +303,11 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
         </div>
         
          <div class="buscar">
-             <h4 >Buscar:</h4>
-                 <form method="POST">
-                 
-                 <select name="lista" id="list" style="cursor: pointer;">
-                 <option value="inventario">No. Inventario</option>
-                 <option value="factura">Factura</option>
-                 <option value="serie">Serie</option>
-                <option value="todo">Mostrar Todos</option>
-             </select>
-             <input type="text" placeholder="Escribe el número" id="caja1" name="cajita">
-             <button id="rep1" name="buscar" type="submit">Buscar</button>
-                </form>   
+         <input type="text" id="filtro" onkeyup="filtroinvetario()" placeholder="Buscar por Numero de inventario">
+         <input type="text" id="filtrose" onkeyup="filtroserie()" placeholder="Buscar por numero de serie">
+         <input type="text" id="filtrofac" onkeyup="filtrofactura()" placeholder="Buscar por factura">
+         <input type="text" id="filtroidmostrar" onkeyup="filtroinvetariomostrar()" placeholder="Buscar por numero de inventario" style="display:none;">
+         </form>   
          </div>
               
          <div class=repo>
@@ -268,33 +358,16 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                      </tr>
                  </thead> 
                   <?php
-                        $var = "asdasdsa";
-                        $valorCaja=0;
-                        if(isset($_GET['lista'])){
-                            $var= $_GET['lista'];
-                            
-                        }
-                    
-                        //echo "sadasdasd",$_POST['cajaita'];
-                        // echo $var;
+                        
 
-                        if($var=="inventario"){
-                        $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `No.Inv.`='$valorCaja'ORDER BY `No.Inv.`;";
-                        }else if($var=="factura"){
-                           $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `idFactura`='123' ORDER BY `No.Inv.`;";
-                        }else if($var=="serie"){
-                           
-                            $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario && `Serie`='1111' ORDER BY `No.Inv.`;";
-                        }else{
-                            $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
-                        }
+                $sql="SELECT `No.Inv.`,Tipo,Descripcion,dNombre,idFactura,Nombre,CostoCIVA,CostoSIVA,`Status`,Serie,Observaciones,Color,Material,Marca,Modelo,FormaCompra,Origen,IVA from mobiliarioyequipo,usuario,departamentos where departamentos.idDepartamentos=uidDepartamentos && usuario.idUsuario=mobiliarioyequipo.idUsuario ORDER BY `No.Inv.`;";
                    $result=mysqli_query($mysqli,$sql);
 
                     
                    while($mostrar=mysqli_fetch_array($result)){
                      ?> 
                    
-                  <tr >;
+                  <tr >
                       
                      <td ><?php echo $mostrar['No.Inv.']?></td>
                      <td><?php echo $mostrar['Tipo']?></td>
@@ -311,12 +384,16 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                     <?php
                    }
                      ?>
-             </table>    
-             </div>
-               
-               
-                <div id="oculto" style="display:none">
-                <table>
+                     </table>
+                    
+                
+
+                
+            
+                        
+         </div>
+         <div id="oculto" style="display:none">
+                <table >
                  <thead>
                      <tr style="background: #118327;" id="tab2">
                      <th id="oculto1">No.Inv.</th>    
