@@ -23,10 +23,27 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
     function Mostrar(){
      document.getElementById("oculto").style.display ="block";
         document.getElementById("tabla").style.display ="none";
+        document.getElementById("filtro").style.display ="none";
+        document.getElementById("filtrose").style.display ="none";
+        document.getElementById("filtrofac").style.display ="none";
+        document.getElementById("filtroidmostrar").style.display ="block";
+        document.getElementById("et1").style.display ="none";
+        document.getElementById("et2").style.display ="none";
+        document.getElementById("busca").style.width ="30%";
+        document.getElementById("busca").style.marginLeft ="30%";
+
         }
         function Ocultar(){
-     document.getElementById("oculto").style.display ="none";
-            document.getElementById("tabla").style.display ="block";
+        document.getElementById("oculto").style.display ="none";
+        document.getElementById("tabla").style.display ="block";
+        document.getElementById("filtro").style.display ="block";
+        document.getElementById("filtrose").style.display ="block";
+        document.getElementById("filtrofac").style.display ="block";
+        document.getElementById("filtroidmostrar").style.display ="none";
+        document.getElementById("et1").style.display ="block";
+        document.getElementById("et2").style.display ="block";
+        document.getElementById("busca").style.width ="100%";
+        document.getElementById("busca").style.marginLeft ="0%";
         }
         function Mostrar_Ocultar(){
             var oculto=document.getElementById("oculto");
@@ -147,11 +164,16 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
             <h1>Artículos</h1>
         </div>
          
-         <div class="buscar">
-         <input type="text" id="filtro" onkeyup="filtroinvetario()" placeholder="Buscar por Numero de inventario">
-         <input type="text" id="filtrose" onkeyup="filtroserie()" placeholder="Buscar por numero de serie">
-         <input type="text" id="filtrofac" onkeyup="filtrofactura()" placeholder="Buscar por factura">
-         <input type="text" id="filtroidmostrar" onkeyup="filtroinvetariomostrar()" placeholder="Buscar por numero de inventario" style="display:none;">
+         <div class="buscar" id="busca">
+         <label style="font-weight:bold; font-size:20px; background-color:dodgerblue; color:white; width:80px; text-align:center; border-radius:8px;">Buscar</label>
+         <label style="font-weight:bold; font-family:cursive;">Por No.Inv:</label>
+         <input type="text" id="filtro" onkeyup="filtroinvetario()" placeholder="Buscar No.Inv.">
+         <label style="font-weight:bold; font-family:cursive;" id="et1">Por No. Serie:</label>
+         <input type="text" id="filtrose" onkeyup="filtroserie()" placeholder="Buscar No.Serie">
+         <label style="font-weight:bold; font-family:cursive;" id="et2">Por No. Factura:</label>
+         <input type="text" id="filtrofac" onkeyup="filtrofactura()" placeholder="Buscar No.Factura">
+         <input type="text" id="filtroidmostrar" onkeyup="filtroinvetariomostrar()" placeholder="Buscar No.Inv." style="display:none;">
+         </form>   
          </div>
          <div class=repo>
          <a href="cont-rep.php"><button id="rep" style="width: 180px; height: 30px; border-radius: 8px; background-color:forestgreen; color: white; font-size: 18px; font-family:cursive;  float: left; cursor: pointer; border-color: cadetblue; margin-top: 200px;">Generar Reporte</button></a>
