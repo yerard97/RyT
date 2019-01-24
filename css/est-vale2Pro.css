@@ -8,8 +8,9 @@ main{
     color:#118327;
     font-style:oblique;
     font-family: cursive;
-    text-align: center;
+    width: 100%;
     font-size: 55px;
+    text-align: center;
 }
 
 .menu li a:hover{
@@ -43,16 +44,75 @@ main{
     margin-left: 50px;
 }
 .text{
-    justify-content:center;
-    margin:0px 15%; 
-    width: 70%;
-    padding: 20px;
-    
+    width: 100%;
+    padding: 40px;
+    justify-content: center;
     display: flex;
     font-size: 14.5px;
 }
+
 .t2{
+    margin-top: -20px;
     white-space:pre-wrap;
+    margin-left: 10%;
+}
+
+.btn{
+    margin-top: 250px;
+    margin-left: -16%;
+}
+
+.nuevo{
+    margin-top: 320px;
+    margin-left: -440px;
+    position: absolute;
+}
+
+
+#boton10{
+    height: 30px;
+    width: 100px;
+    margin-top: 60px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: -150px;
+    cursor: pointer;
+    position: fixed;
+}
+
+#boton2{
+   background-color:darkred;
+    height: 40px;
+    letter-spacing: 1px;
+    float: left;
+    border-radius: 50px;
+    font-family: cursive;
+    box-shadow: 3px 3px red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 210px;
+    margin-left: -55%;
+}
+
+#boton1{
+  background-color:forestgreen;
+    height: 40px;
+    letter-spacing: 1px;
+    float: left;
+    border-radius: 50px;
+    font-family: cursive;
+    box-shadow: 3px 3px darkgreen;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 120px;   
+    margin-left: 40%;
 }
 
 #boton{
@@ -66,9 +126,34 @@ main{
     color: white;
     font-size: 16px;
     cursor: pointer;
-    width: 80px;
-    margin-left: 47%;
-    
+    width: 80px; 
+}
+
+.tabla{
+    margin-top: -4px;
+    margin-left: 15%;
+    width: 100%;
+}
+
+
+table{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 10px;
+}
+
+
+tr:nth-child(even){
+    background-color:azure; 
+}
+
+tr:nth-child(odd){
+    background-color:#8FAF95; 
 }
 
 
@@ -95,6 +180,10 @@ main{
     header h2{
     padding: 7px;
     font-size: 20px;
+    }
+    
+    .text{
+        width: 150%;
     }
 }
 

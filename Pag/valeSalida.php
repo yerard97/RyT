@@ -40,7 +40,7 @@ $pdf->SetXY(72, 30);
 $pdf->Cell(42,4,utf8_decode('FECHA DE LA SOLICITUD: '));
 //$pdf->Cell(37,4,utf8_decode($varFecha));
 
-$miCabecera = array('NÚMERO DE PARTIDA', 'CANTIDAD SOLICITADA', 'UNIDAD DE MEDIDA','DESCRIPCION MATERIAL SOLICITADO','CANTIDAD SOLICITADA');
+$miCabecera = array('NÚMERO DE PARTIDA', 'CANTIDAD SOLICITADA', 'UNIDAD DE MEDIDA','DESCRIPCION MATERIAL SOLICITADO','CANTIDAD ENTREGADA');
  
 //Métodos llamados con el objeto $pdf
 $pdf->fsolcom($miCabecera);
