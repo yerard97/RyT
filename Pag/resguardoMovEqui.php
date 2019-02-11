@@ -36,6 +36,7 @@ where mobiliarioyequipo.idUsuario=usuario.idUsuario && Puesto='$puesto';");
 
 
 
+
 $vartemp=78;
 $noCol= mysqli_num_rows ($result);
 $cont=1;
@@ -54,6 +55,12 @@ while($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     }*/
     $cont=$cont+1;
 }
+
+$result = mysqli_query($mysqli, "SELECT numeroresguardo FROM variablessistema where idvs=1;");
+$row = mysqli_fetch_assoc($result);
+$valorNumRes=$row['numeroresguardo']+1;
+$result = mysqli_query($mysqli, "update  variablessistema set numeroresguardo=$valorNumRes where idvs=1;");
+
 
  
 //Métodos llamados con el objeto $pdf
@@ -75,7 +82,7 @@ $reg2 = array(date('Y-m-d'));
 $pdf->tabla2($reg2,$val+8);
 $reg2 = array('RESGUARDO');
 $pdf->tabla2($reg2,$val+12);
-$reg2 = array('');
+$reg2 = array($valorNumRes);
 $pdf->tabla2($reg2,$val+16);
 
 
