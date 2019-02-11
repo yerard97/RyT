@@ -116,7 +116,7 @@ $var = $_SESSION['idsolcomp'];
                  </thead> 
                  
                  <?php
-                         $var = $_SESSION['idsolcomp'];
+                    $var = $_SESSION['idsolcomp'];
                    $sql="SELECT * from detallesc where dscsolicitudCompra= $var";
                    $result=mysqli_query($mysqli,$sql);
                     

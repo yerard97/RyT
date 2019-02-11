@@ -34,6 +34,14 @@ if ($row['No.Inv.']==$noinv){
     
 $cont=0;
 $cont1=0;
+    
+if ($noinv==null){
+                echo " 
+            <script type='text/javascript'>
+            swal('Error! Inserta el No.Inv. a editar');
+            setTimeout(function(){ location.href ='../inf.php';}, 500); 
+            </script>";
+}else{
 
 $result=mysqli_query($mysqli,"SELECT idUsuario FROM usuario WHERE nombre LIKE '$responsable';");
 $row=mysqli_fetch_assoc($result);
@@ -78,19 +86,7 @@ if($cont>0){
             setTimeout(function(){ location.href ='../inf.php';}, 1000); 
             </script>";
 }   
-
 }
-else
-{
-    echo " 
-            <script type='text/javascript'>
-            swal('¡Número de Inventario No Existe!');
-            setTimeout(function(){ location.href ='../inf.php';}, 1000); 
-            </script>";
+
 }
 mysqli_close($mysqli);
-/*echo "<script type='text/javascript'>
-       location.href='../sg.php'
-        </script>"
-
-?>*/

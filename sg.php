@@ -113,6 +113,8 @@ if (!$mysqli) die("No puede conectar a MySQL: " . mysql_error());
                                 document.getElementById('val14').value,
                                 document.getElementById('val15').value,
                                 document.getElementById('val16').value
+                                
+                                
                             ]
                             }
             })

@@ -72,13 +72,21 @@ $rows_count=$busqueda->num_rows;
             $insertar="INSERT INTO mobiliarioyequipo VALUES ($lastr,$row,'$noinv','$descripcion','$color',
             '$material','$marca','$modelo','$serie','$nombre','$status','$factura','$formac','',$costoc,$costos,'2050-01-21','$obser',$iva,null)";
 
+            if ($nombre==null || $descripcion==null || $color ==null || $material ==null || $marca==null || $modelo ==null || $serie==null || $status==null || $factura==null || $formac==null || $costoc==null || $costos==null || $obser==null || $iva==null || $noinv==null ){
+                echo " 
+            <script type='text/javascript'>
+            swal('Error! Completa todos los campos');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+            }else{
+            
                     $resultado=mysqli_query($mysqli,$insertar);
                 echo " 
             <script type='text/javascript'>
             swal('Agregado Correctamente');
             setTimeout(function(){ location.href ='../sg.php';}, 500); 
             </script>";
-               
+            }
         }
 
 

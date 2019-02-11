@@ -48,7 +48,14 @@ if ($row['No.Inv.']==$noinv){
 $cont=0;
 $cont1=0;
 $cont2=0;
-    
+
+if ($noinv==null){
+                echo " 
+            <script type='text/javascript'>
+            swal('Error!');
+            setTimeout(function(){ location.href ='../sg.php';}, 500); 
+            </script>";
+}else{
 if ($nombre!=null){
     if($mysqli->query("UPDATE mobiliarioyequipo SET Tipo='$nombre' WHERE `No.Inv.`='$noinv';")){
         $cont=$cont+1;
@@ -170,7 +177,7 @@ if ($inv!=null){
         $cont1=$cont1+1;
     }
 }}
-    
+}
     
     
     
@@ -195,7 +202,7 @@ if($cont>0){
 }else{
     echo " 
             <script type='text/javascript'>
-            swal('¡No editaste ningún campo!');
+            swal('¡Error al Editar!');
             setTimeout(function(){ location.href ='../sg.php';}, 1000); 
             </script>";
 }   
