@@ -118,14 +118,29 @@ $pdf->Cell(50,4,utf8_decode('Vo. Bo.'));
 $pdf->SetXY(171, 240);
 $pdf->Cell(50,4,utf8_decode('USUARIO'));
 
+$result1 = mysqli_query($mysqli, "select nombre from usuario where Puesto='Encargado de la coordinacion financiera y planeacion';");
+
+$row1 = mysqli_fetch_assoc($result1);
+$result2 = mysqli_query($mysqli, "select nombre from usuario where Puesto='Enc. Depto. Servicios Generales';");
+
+$row2 = mysqli_fetch_assoc($result2);
+
+
+
+$pdf->SetXY(15, 264);
+$pdf->Cell(50,4,strtoupper ($row1['nombre']));
 $pdf->SetXY(15, 268);
 $pdf->Cell(50,4,utf8_decode('ENC. DEPTO. SERVICIOS GENERALES'));
+$pdf->SetXY(88, 264);
+$pdf->Cell(50,4,strtoupper ($row2['nombre']));
+
+
 $pdf->SetXY(88, 268);
 $pdf->Cell(50,4,utf8_decode('DIRECTOR DE COORDINACION'));
 $pdf->SetXY(90, 271);
 $pdf->Cell(50,4,utf8_decode('FINANCIERA Y PLANEACION'));
 $pdf->SetXY(166, 268);
-$pdf->Cell(50,4,$car['Puesto']);
+$pdf->Cell(50,4,strtoupper ($car['Puesto']));
 $pdf->SetXY(166, 264);
 $pdf->Cell(50,4,$car['Nombre']);
 
